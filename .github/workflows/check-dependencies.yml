@@ -1,7 +1,6 @@
 name: Lint Knip (Production Only)
 
 on:
-  pull_request:
   workflow_dispatch:
   workflow_call:
 

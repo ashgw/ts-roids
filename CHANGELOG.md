@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.41.4
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.41.3...v1.41.4)
+
+### 📦 Build
+
+- Update build params ([eda4108](https://github.com/ashgw/ts-roids/commit/eda4108))
+
+### ❤️ Contributors
+
+- AshGw <ashrefgw@proton.me>
+
 ## v1.41.3
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.41.2...v1.41.3)

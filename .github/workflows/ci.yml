@@ -5,16 +5,27 @@ on:
     branches:
       - main
 
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+  workflow_dispatch:
+
 permissions:
   contents: write
   issues: write
   pull-requests: write
 
 concurrency:
-  group: Release
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
+  validate-pr:
+    if: github.event_name == 'pull_request'
+    uses: ./.github/workflows/validate-pr-title.yml
+    secrets: inherit
   format:
     uses: ./.github/workflows/check-formatting.yml
   lint:
@@ -26,7 +37,7 @@ jobs:
   test:
     uses: ./.github/workflows/test.yml
 
-  green-light:
+  mergeable:
     if: always()
     needs:
       - lint
@@ -40,43 +51,15 @@ jobs:
         id: all-green
         with:
           jobs: ${{ toJSON(needs)}}
+
   docs:
-    runs-on: ubuntu-latest
-    needs:
-      - green-light
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/prepare
-      - run: pnpm run build:docs
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: ./docs
-          keep_files: true
+    if: github.ref == 'refs/heads/main'
+    needs: [mergeable]
+    uses: ./.github/workflows/docs.yml
+    secrets: inherit
+
   npm:
-    needs:
-      - green-light
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - uses: ./.github/actions/prepare
-
-      - name: Build
-        run: pnpm run build
-
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ~/.npmrc
-          #!/bin/bash
-          if ! pnpm can-npm-publish; then
-            exit 0
-          fi
-          pnpm publish --no-git-checks --access public
+    if: github.ref == 'refs/heads/main'
+    needs: [mergeable]
+    uses: ./.github/workflows/npm.yml
+    secrets: inherit
