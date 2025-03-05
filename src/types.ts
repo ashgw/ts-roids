@@ -465,17 +465,11 @@ export type IsArray<T> = IfExtends<T, unknown[], true, false>;
  * An array of elements of type `T` is defined as `Arr` being a subtype of `T[]`.
  * @example
  * ```
- * IsArrayOf<number[], number>; // true
- * IsArrayOf<string[], number>; // false
- * IsArrayOf<number[], string>; // false
- * IsArrayOf<(number | string)[], number>; // false
  * IsArrayIncludeTypeof<Record<string, number>[], number> // false
  * IsArrayIncludeTypeof<string[], null | boolean> // false
  * ArrayIncludeTypeof<string[], string | boolean> // true
  * IsArrayIncludeTypeof<Record<string, number>[], Record<symbol, boolean>> // true,
  * ```
- * @see
- * If you want more type narrowing use IsArrayOf<Arr,T>
  */
 export type IsArrayIncludesTypeof<Arr, T> = IfExtends<Arr, T[], true, false>;
 
@@ -621,6 +615,7 @@ export type IsPositive<N extends Numeric> = N extends N
       ? false
       : true
   : never;
+
 /**
  * Check if a given numeric value is an integer
  * @returns
