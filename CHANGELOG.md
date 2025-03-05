@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v1.43.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.42.0...v1.43.0)
+
+### 📖 Documentation
+
+- Add link to tests dir in `README.md` ([d370f2d3](https://github.com/ashgw/ts-roids/commit/d370f2d3))
+- Remove @deprecated docs ([79f621a9](https://github.com/ashgw/ts-roids/commit/79f621a9))
+- Add enhanced docs for `Strlen` ([8978fa28](https://github.com/ashgw/ts-roids/commit/8978fa28))
+
+### 🏡 Chore
+
+- Cleanup arrays ([6f2dbac6](https://github.com/ashgw/ts-roids/commit/6f2dbac6))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.42.0
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.41.3...v1.42.0)
