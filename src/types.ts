@@ -1,4 +1,12 @@
 /**
+ * Used to display an error message instead of never, for better readability
+ * @export type {UnassignableTypeError}
+ */
+
+export type UnassignableTypeError<ErrType extends string> =
+  `type is not assignable to type ${ErrType}`;
+/**
+ *
  * Represents a type that can either be  ``null`` or ``undefined``.
  * @export type {Nullable}
  */
@@ -46,7 +54,18 @@ export type AnyFunction = (...args: any[]) => any;
 export type UnknownFunction = (...args: unknown[]) => unknown;
 
 /**
- * Type representing an integer
+ * Represents an integer type.
+ * This type is used to ensure that a numeric value is an integer.
+ *
+ * Example use case:
+ *
+ * ```ts
+ * export function myFunc<T extends Numeric>(a: Integer<T>) {
+ *   console.log(a);
+ * }
+ * const good = myFunc(4545); // This is valid as 4545 is an integer.
+ * const bad = myFunc(4545.554); // This will throw an error as 4545.554 is not an integer.
+ * ```
  */
 export type Integer<N extends Numeric> = IfEquals<IsInteger<N>, true, N, never>;
 
