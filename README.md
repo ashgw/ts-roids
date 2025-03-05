@@ -151,6 +151,10 @@ Checkout the full [API reference](https://ts-roids.ashgw.me/) for all usage exam
 - [`Vals<Obj>`](https://ts-roids.ashgw.me/types/Vals.html) - Get the set of type values in a given object.
 - [`Xor<B1, B2>`](https://ts-roids.ashgw.me/types/Xor.html) - Exclusive ``OR`` between two boolean types ``B1`` and ``B2``.
 
+
+The best way to understand how these types work is to check the [tests directory](/tests/). Each type has corresponding ~~edge~~ test cases that demonstrate its usage and expected behavior.
+
+
 #### Decorators
 
 - [`@Final`]() - Marks an object final, as in one cannot inherit from it.
