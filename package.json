@@ -1,6 +1,6 @@
 {
   "name": "ts-roids",
-  "version": "1.41.4",
+  "version": "1.42.0",
   "private": false,
   "description": "Bullet-proof TS even more",
   "type": "module",

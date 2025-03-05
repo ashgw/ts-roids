@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v1.42.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.41.3...v1.42.0)
+
+### 🚀 Enhancements
+
+- Add `UnassignableTypeError` ([d72ec385](https://github.com/ashgw/ts-roids/commit/d72ec385))
+
+### 💅 Refactors
+
+- Ci jobs ([d87003f0](https://github.com/ashgw/ts-roids/commit/d87003f0))
+
+### 📦 Build
+
+- Update build params ([eda41080](https://github.com/ashgw/ts-roids/commit/eda41080))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+- AshGw <ashrefgw@proton.me>
+
 ## v1.41.4
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.41.3...v1.41.4)
