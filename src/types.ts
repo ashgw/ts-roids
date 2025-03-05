@@ -861,6 +861,21 @@ export type _MaxInTwoPositiveNums<
  * ```ts
  * Strlen<'foo'>; // Result: 3
  * ```
+ *
+ * Can be used to create type constraints on string lengths:
+ * ```ts
+ * // Only allow strings of length 8-10 characters
+ * type ValidPassword<T extends string> = Strlen<T> extends 8 | 9 | 10 ? T : never;
+ *
+ * // Function that only accepts valid password strings
+ * function checkValidPassword<T extends string>(val: T & ValidPassword<T>) {
+ *   console.log(val);
+ * }
+ *
+ * // Works with string literals
+ * const validPass = checkValidPassword('password123' as const); // OK
+ * const invalidPass = checkValidPassword('short' as const); // Type error
+ * ```
  */
 export type Strlen<
   S extends string,
