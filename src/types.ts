@@ -425,7 +425,7 @@ export type Tuple<T> = T extends readonly unknown[]
   : never;
 
 /**
- * Represents a tuple of size `N`, where `N` is a Numeric type.
+ * Represents a tuple of size `N`, where `N` is a positive integer.
  * The tuple's length is exactly `N`, with each element of the tuple being of type `T`.
  *
  * @template T The type of the elements in the tuple.
@@ -445,7 +445,7 @@ export type SizedTuple<
   T,
   N extends Numeric,
   Acc extends T[] = [],
-> = N extends Integer<infer M>
+> = N extends PositiveInteger<infer M>
   ? Acc['length'] extends M
     ? Acc
     : SizedTuple<T, M, [T, ...Acc]>
