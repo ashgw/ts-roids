@@ -1204,13 +1204,11 @@ export type DeepOmit<T, P extends string> = P extends `${infer K}.${infer R}`
 /**
  * As the name implies, it turns a union into an intersection
  * @example
-  type ExpectedToBe = (() => 'foo') & ((baz: 88) => Optional<T>);
-
   type T = NewType<'T', string>;
   type Result = UnionToIntersection<
       (() => 'foo') | ((baz: 88) => Optional<NewType<'T', string>>)
     >
-    // Result: ExpectedToBe
+    // Result: (() => 'foo') & ((baz: 88) => Optional<T>)
 
     type Result2 = UnionToIntersection<
       IsFalsy<0> | IsDeepImmutable<{ a: string; readonly b: string }>
