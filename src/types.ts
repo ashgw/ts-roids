@@ -1386,15 +1386,13 @@ export type DeepPick<
   T extends Record<string, any>,
   P extends string,
 > = UnionToIntersection<
-  P extends P
-    ? P extends `${infer K}.${infer R}`
-      ? {
-          [K1 in K]: DeepPick<T[K1], R>;
-        }
-      : P extends Keys<T>
-        ? Pick<T, P>
-        : never
-    : never
+  P extends `${infer K}.${infer R}`
+    ? {
+        [K1 in K]: DeepPick<T[K1], R>;
+      }
+    : P extends Keys<T>
+      ? Pick<T, P>
+      : never
 >;
 
 /**
