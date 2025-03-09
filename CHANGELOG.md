@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v1.44.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.43.0...v1.44.0)
+
+### 🩹 Fixes
+
+- Now `Odd<N>` and `Even<N>` only accepts integers ([fd7bda97](https://github.com/ashgw/ts-roids/commit/fd7bda97))
+- Make tuple only accept positive integers ([b415ba9e](https://github.com/ashgw/ts-roids/commit/b415ba9e))
+
+### 📖 Documentation
+
+- Imporove `UnionToIntersection` docs ([3192233e](https://github.com/ashgw/ts-roids/commit/3192233e))
+
+### 🏡 Chore
+
+- Simplify `DeepPick<Obj>` ([80311765](https://github.com/ashgw/ts-roids/commit/80311765))
+- Improve `TestType` readability ([8d1fb3ae](https://github.com/ashgw/ts-roids/commit/8d1fb3ae))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.43.0
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.42.0...v1.43.0)
