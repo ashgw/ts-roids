@@ -1383,7 +1383,7 @@ export type OmitCommonKeys<
  *
  */
 export type DeepPick<
-  T extends Record<string, any>,
+  T extends Record<string, any>, // need to use `any` here for `T[K1]` inference
   P extends string,
 > = UnionToIntersection<
   P extends `${infer K}.${infer R}`
@@ -1397,6 +1397,7 @@ export type DeepPick<
 
 /**
  * Retrieves the keys that are mutable from an object of  type T.
+ * Basically keys that are not marked with the `readonly` modifier
  * @example
  * ```typescript
  *  type ExampleType = {
@@ -1442,20 +1443,6 @@ export type ImmutableKeys<T> = {
 }[Keys<T>];
 
 /**
- * A function to determines if two types match.
- * @template T1 The first  type to compare.
- * @template T2 The second  type to compare.
- * @template Expected A boolean literal indicating whether `T1` should match `T2`.
- * If you expect the types to match, set this to true; if not, set it to false.
- * @returns
- * Boolean that is true, if your expectation was correct, otherwise false.
- * @hidden
- */
-declare function testType<T1, T2, E extends boolean>(): Equals<
-  Equals<T1, T2>,
-  E
->;
-/**
  * Determines if two types match.
  * @template T1 The first  type to compare.
  * @template T2 The second  type to compare.
@@ -1481,8 +1468,9 @@ test('|-54| should be 54',() => {
 });
  * ````
  * */
-export type TestType<T1, T2, Expected extends boolean> = ReturnType<
-  typeof testType<T1, T2, Expected>
+export type TestType<T1, T2, Expected extends boolean> = Equals<
+  Equals<T1, T2>,
+  Expected
 >;
 
 /**
