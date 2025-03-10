@@ -463,6 +463,29 @@ export type SizedTuple<
 export type IsArray<T> = IfExtends<T, unknown[], true, false>;
 
 /**
+ * Represents a unique array type that filters out duplicate elements.
+ * If a duplicate is encountered, it returns a tuple with an error message and the duplicate element.
+ *
+ * @template T The type of the elements in the array, which must be a readonly array.
+ * @returns A readonly array of unique elements or a tuple indicating a duplicate.
+ *
+ * @example
+ * ```
+ * type Result1 = UniqueArray<[1, 2, 3, 1]>; // Result: ['Encountered duplicate env var', 1]
+ * type Result2 = UniqueArray<[1, 2, 3]>; // Result: [1, 2, 3]
+ * type Result3 = UniqueArray<[]>; // Result: []
+ * ```
+ */
+export type UniqueArray<
+  T extends readonly any[],
+  Seen = never,
+> = T extends readonly [infer Head, ...infer Tail]
+  ? Head extends Seen
+    ? ['Encountered duplicate env var', Head]
+    : readonly [Head, ...UniqueArray<Tail, Seen | Head>]
+  : T;
+
+/**
  * @returns `true` if `Arr` is an array that includes elements of type `T`, otherwise `false`.
  * An array of elements of type `T` is defined as `Arr` being a subtype of `T[]`.
  * @example
