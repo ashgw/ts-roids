@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.45.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.44.0...v1.45.0)
+
+### 🚀 Enhancements
+
+- Add `UniqueArray` ([94994c54](https://github.com/ashgw/ts-roids/commit/94994c54))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.44.0
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.43.0...v1.44.0)

@@ -7,7 +7,7 @@ test('UniqueArray should return unique elements', () => {
     readonly [1, 2, 3, 'Encountered duplicate env var', 1],
     true
   > = true;
-  expect(result).toEqual([1, 2, 3]);
+  expect(result).toEqual(true);
 });
 
 test('UniqueArray should return the same array for unique elements', () => {
@@ -16,7 +16,7 @@ test('UniqueArray should return the same array for unique elements', () => {
     readonly [4, 5, 6],
     true
   > = true;
-  expect(result).toEqual([4, 5, 6]);
+  expect(result).toEqual(true);
 });
 
 test('UniqueArray should return an error for all duplicates', () => {
@@ -25,5 +25,5 @@ test('UniqueArray should return an error for all duplicates', () => {
     readonly [7, 'Encountered duplicate env var', 7],
     true
   > = true;
-  expect(result).toEqual([7, 'Encountered duplicate env var', 7]);
+  expect(result).toEqual(true);
 });
