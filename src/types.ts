@@ -471,7 +471,7 @@ export type IsArray<T> = IfExtends<T, unknown[], true, false>;
  *
  * @example
  * ```
- * type Result1 = UniqueArray<[1, 2, 3, 1]>; // Result: ['Encountered duplicate env var', 1]
+ * type Result1 = UniqueArray<[1, 2, 3, 1]>; // Result: ['Encountered duplicate element', 1]
  * type Result2 = UniqueArray<[1, 2, 3]>; // Result: [1, 2, 3]
  * type Result3 = UniqueArray<[]>; // Result: []
  * ```
@@ -481,7 +481,7 @@ export type UniqueArray<
   Seen = never,
 > = T extends readonly [infer Head, ...infer Tail]
   ? Head extends Seen
-    ? ['Encountered duplicate env var', Head]
+    ? ['Encountered duplicate element', Head]
     : readonly [Head, ...UniqueArray<Tail, Seen | Head>]
   : T;
 
