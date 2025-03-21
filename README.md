@@ -7,7 +7,6 @@
 [![CI](https://github.com/AshGw/ts-roids/actions/workflows/ci.yml/badge.svg)](https://github.com/AshGw/ts-roids/actions/workflows/ci.yml)
 [![@latest](https://img.shields.io/npm/v/ts-roids.svg)](https://www.npmjs.com/package/ts-roids)
 [![npm downloads](https://img.shields.io/npm/dm/ts-utils.svg)](https://www.npmjs.com/package/ts-roids)
-[![Socket Badge](https://socket.dev/api/badge/npm/package/ts-roids/1.40.0)](https://socket.dev/npm/package/ts-roids/overview/1.40.0)
 <hr/>
 </div>
 

@@ -2143,7 +2143,8 @@ type LastOf<T> = UnionToIntersection<
  * type TestUnion = 'a' | 'b' | 'c';
  * type ResultTuple = UnionToTuple<TestUnion>; // Result: ['a', 'b', 'c']
  */
-type UnionToTuple<
+
+export type UnionToTuple<
   T,
   L = LastOf<T>,
   N = [T] extends [never] ? true : false,

@@ -168,21 +168,3 @@ export function Singleton<T extends Newable>(cst: T): T {
     }
   };
 }
-
-type LastOf<T> = UnionToIntersection<
-  T extends any ? () => T : never
-> extends () => infer R
-  ? R
-  : never;
-
-type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
-  k: infer I
-) => void
-  ? I
-  : never;
-
-export type UnionToTuple<
-  T,
-  L = LastOf<T>,
-  N = [T] extends [never] ? true : false,
-> = N extends true ? [] : [...UnionToTuple<Exclude<T, L>>, L];
