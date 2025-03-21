@@ -39,6 +39,7 @@ Checkout the full [API reference](https://ts-roids.ashgw.me/) for all usage exam
 - [`PartializedUnion<T>`](https://ts-roids.ashgw.me/types/PartializedUnion.html) - Creates a union type where each variant has its specific properties required, while other properties are optional.
 - [`UniqueArray<T>`](https://ts-roids.ashgw.me/types/UniqueArray.html) - Create unique array type from a given array type `T`, a set perse.
 - [`Prune<T,N = NotIncluded>`](https://ts-roids.ashgw.me/types/Prune.html) - Prune a type `T` by recursively omitting properties of type `N` (defaults to [`NotIncluded`](https://ts-roids.ashgw.me/types/NotIncluded.html)).
+- [`UnionToTuple<T>`](https://ts-roids.ashgw.me/types/UnionToTuple.html) - Converts a union type `T` into a tuple type, allowing for ordered access to the union's members.
 - [`DeepToPrimitive<Obj>`](https://ts-roids.ashgw.me/types/DeepToPrimitive.html) - Recursively transforms an object type T into a type where all properties are replaced with their corresponding primitive types.
 - [`Assign<Obj,ObjArr>`](https://ts-roids.ashgw.me/types/Assign.html) - Copies all enumerable own properties from one target object to a source array of objects.
 

@@ -278,7 +278,7 @@ export type EmptyObject = NonNullable<unknown>;
 
 /**
  * Extracts truthy properties from an object type `T`.
- * @example 
+ * @example
  * ````ts
 type T = {
   name: string;
@@ -963,7 +963,7 @@ export type Methods<T extends object> = {
      Properties<{
           barBaz: string;
           bazBar: Numeric;
-          bar: () => number; 
+          bar: () => number;
         }> // Result: 'barBaz' | 'bazBar'
      * ````
      */
@@ -1843,9 +1843,9 @@ export type NotIncluded = NewType<'NotIncluded', string>;
     >
   >;
  * ```
- * Where `UserOrderDetails` is defined as: 
+ * Where `UserOrderDetails` is defined as:
  * ```ts
- 
+
 export enum OrderStatus {
   PENDING = 'PENDING',
   SHIPPED = 'SHIPPED',
@@ -1964,7 +1964,7 @@ type UserOrderDetails<
   }[];
 };
  * ```
-Any property marked as `NotIncluded` will be excluded from the resulting `OrderData` type, not as `undefined` or `null`, but completely excluded as if it never existed on the type 
+Any property marked as `NotIncluded` will be excluded from the resulting `OrderData` type, not as `undefined` or `null`, but completely excluded as if it never existed on the type
 
  * ```ts
   const testOrderData: OrderData = {
@@ -2124,3 +2124,27 @@ export type PartializedUnion<
     ? T & Partial<Record<Exclude<AllKeys, Keys<T>>, undefined>>
     : never
 >;
+
+type LastOf<T> = UnionToIntersection<
+  T extends any ? () => T : never
+> extends () => infer R
+  ? R
+  : never;
+
+/**
+ * `UnionToTuple<T>` converts a union type `T` into a tuple type.
+ * This type is useful for scenarios where you need to work with the individual members of a union as an ordered list.
+ *
+ * @template T - The union type to convert into a tuple.
+ * @template L - The last member of the union, used for recursive extraction.
+ * @template N - A boolean that checks if the union is empty.
+ *
+ * @example
+ * type TestUnion = 'a' | 'b' | 'c';
+ * type ResultTuple = UnionToTuple<TestUnion>; // Result: ['a', 'b', 'c']
+ */
+type UnionToTuple<
+  T,
+  L = LastOf<T>,
+  N = [T] extends [never] ? true : false,
+> = N extends true ? [] : [...UnionToTuple<Exclude<T, L>>, L];

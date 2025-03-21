@@ -9,7 +9,7 @@ export class FinalTypeError extends TypeError {}
  * When applied, any attempt to extend this class will result in a TypeError at runtime.
  * @remarks
  * This decorator does not prevent instantiation of the final class itself.
- * @example 
+ * @example
  * ```ts
  * @Final
  * class Foo<T> {
@@ -168,3 +168,21 @@ export function Singleton<T extends Newable>(cst: T): T {
     }
   };
 }
+
+type LastOf<T> = UnionToIntersection<
+  T extends any ? () => T : never
+> extends () => infer R
+  ? R
+  : never;
+
+type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
+  k: infer I
+) => void
+  ? I
+  : never;
+
+export type UnionToTuple<
+  T,
+  L = LastOf<T>,
+  N = [T] extends [never] ? true : false,
+> = N extends true ? [] : [...UnionToTuple<Exclude<T, L>>, L];
