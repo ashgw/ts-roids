@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v1.46.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.44.0...v1.46.0)
+
+### 🚀 Enhancements
+
+- Add `UniqueArray` ([94994c54](https://github.com/ashgw/ts-roids/commit/94994c54))
+- Add `UnionToTuple<T>` ([e77705c2](https://github.com/ashgw/ts-roids/commit/e77705c2))
+
+### 🏡 Chore
+
+- **release:** V1.45.0 ([e190f9d2](https://github.com/ashgw/ts-roids/commit/e190f9d2))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.45.0
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.44.0...v1.45.0)
