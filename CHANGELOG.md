@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.46.1
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.46.0...v1.46.1)
+
+### 🩹 Fixes
+
+- Docs typo in `UniqueArray` ([7f55b7d1](https://github.com/ashgw/ts-roids/commit/7f55b7d1))
+
+### 🏡 Chore
+
+- **release:** V1.46.0 ([024f7a4a](https://github.com/ashgw/ts-roids/commit/024f7a4a))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.46.0
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.44.0...v1.46.0)
