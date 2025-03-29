@@ -20,220 +20,114 @@ And if you&#39;re using decorators, set this.</p>
 <p>Requires TypesScript <code>v5.0</code>+</p>
 <a id="md:documentation" class="tsd-anchor"></a><h2><a href="#md:documentation">Documentation</a></h2><p>Checkout the full <a href="https://ts-roids.ashgw.me/">API reference</a> for all usage examples with details.</p>
 <a id="md:types" class="tsd-anchor"></a><h4><a href="#md:types">Types</a></h4><ul>
-<li><p><a href="https://ts-roids.ashgw.me/types/PartializedUnion.html"><code>PartializedUnion&lt;T&gt;</code></a> - Creates a union type where each variant has its specific properties required, while other properties are optional.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/UniqueArray.html"><code>UniqueArray&lt;T&gt;</code></a> - Create unique array type from a given array type <code>T</code>, a set perse.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Prune.html"><code>Prune&lt;T,N = NotIncluded&gt;</code></a> - Prune a type <code>T</code> by recursively omitting properties of type <code>N</code> (defaults to <a href="https://ts-roids.ashgw.me/types/NotIncluded.html"><code>NotIncluded</code></a>).</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/UnionToTuple.html"><code>UnionToTuple&lt;T&gt;</code></a> - Converts a union type <code>T</code> into a tuple type, allowing for ordered access to the union&#39;s members.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/DeepToPrimitive.html"><code>DeepToPrimitive&lt;Obj&gt;</code></a> - Recursively transforms an object type T into a type where all properties are replaced with their corresponding primitive types.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Assign.html"><code>Assign&lt;Obj,ObjArr&gt;</code></a> - Copies all enumerable own properties from one target object to a source array of objects.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/DeepImmutable.html"><code>DeepImmutable&lt;Obj&gt;</code></a> - Recursively turns the proprties within a given object type <code>T</code> immutable, as in have all the properties with the <code>readonly</code> modifier.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/DeepMutable.html"><code>Deepmutable&lt;Obj&gt;</code></a> - Recursively mutates all the proprties within a given object type <code>T</code>, as in have all the properties without the <code>readonly</code> modifier.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/DeepRequired.html"><code>DeepRequired&lt;Obj&gt;</code></a> - Recursively make all object properties required.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/DeepNotRequired.html"><code>DeepNotRequired&lt;Obj&gt;</code></a> - Recursively make all object properties not required.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/DeepOmit.html"><code>DeepOmit&lt;Obj,P&gt;</code></a> - Recursively omits specified nested properties from an object, based on a given predicate <code>P</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/DeepPick.html"><code>DeepPick&lt;Obj,P&gt;</code></a> - Deeply pick properties from a nested object, based on a given predicate <code>P</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/EmptyObject.html"><code>EmptyObject</code></a> - Represents any non-nullish value, basically <code>{}</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/EqualStrlen.html"><code>EqualStrlen&lt;S1, S2&gt;</code></a> - Check if two strings <code>S1</code> and <code>S2</code> have the same length.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/PartialExcept.html"><code>PartialExcept&lt;T, P&gt;</code></a> - Makes all properties in <code>T</code> optional except those in <code>K</code> which remain required.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/FilterBy.html"><code>FilterBy&lt;Obj, P&gt;</code></a> -  Filters keys from the object type <code>Obj</code> based on a specified predicate <code>P</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Flip.html"><code>Flip&lt;Obj&gt;</code></a> - Flips keys with values of an object type <code>Obj</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a> - Type representing a float.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/If.html"><code>If&lt;C, Do, Else&gt;</code></a> - If <code>C</code> evaluates <code>true</code>, <code>Do</code>, otherwise return <code>Else</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IfEquals.html"><code>IfEquals&lt;T, P, Do, Else&gt;</code></a> - Checks if type <code>T</code> is equal to type <code>P</code>. If <code>T</code> is equal to <code>P</code>, the type resolves to <code>Do</code>, otherwise <code>Else</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IfExtends.html"><code>IfExtends&lt;T, P, Do, Else&gt;</code></a> -  Checks if type <code>T</code> extends type <code>P</code>. if it does, the type resolves to <code>Do</code>, otherwise <code>Else</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/ImmutableKeys.html"><code>ImmutableKeys&lt;Obj&gt;</code></a> - Retrieves the keys that are immutable (<code>readonly</code>) from an object of type <code>Obj</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a> - Represents an integer.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Abs.html"><code>Abs&lt;N&gt;</code></a> - Get the absolute value of a <a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/And.html"><code>And&lt;B1,B2&gt;</code></a> - Logical AND between two boolean types.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/EitherOneOrMany.html"><code>EitherOneOrMany&lt;T&gt;</code></a> - Represents a type that can be either a single value of type <code>T</code> or an array of values of type <code>T</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Nullable.html"><code>Nullable</code></a> - Represents any non-nullish value, basically <code>{}</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Equals.html"><code>Equals&lt;X,Y&gt;</code></a> - Checks if two types <code>X</code> and <code>Y</code> are exactly equal.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/EvenNumeric.html"><code>EvenNumeric&lt;T&gt;</code></a> - Represents an even <a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/ExcludeNull.html"><code>ExcludeNull&lt;T&gt;</code></a> - Excludes <code>null</code> from a type <code>T</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/ExcludeNullable.html"><code>ExcludeNullable&lt;T&gt;</code></a> - Excludes <a href="https://ts-roids.ashgw.me/types/Nullable.html"><code>Nullable</code></a> from a type <code>T</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/ExcludeUndefined.html"><code>ExcludeUndefined&lt;T&gt;</code></a> - Excludes <code>undefined</code> from a type <code>T</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/KeysOfUnion.html"><code>KeysOfUnion&lt;T&gt;</code></a> - Extracts the union of keys from a given union of object types, useful for accessing all possible keys in unions.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Simplify.html"><code>Simplify&lt;T&gt;</code></a> - Flattens the structure of a type by resolving intersections and simplifying nested mapped types, enhancing readability.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Extends.html"><code>Extends&lt;T,U&gt;</code></a> - Evaluates whether one type <code>T</code> is assignable to another type <code>U</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Falsy.html"><code>Falsy</code></a> - Represents a type that is <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">falsy</a>  JavaScript.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/FalsyProperties.html"><code>FalsyProperties&lt;T&gt;</code></a> - Extracts falsy properties from an object type <code>T</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsArrayIncludesTypeof.html"><code>IsArrayIncludesTypeof&lt;Arr, T&gt;</code></a> - Checks if an array type <code>Arr</code> includes one or more of <code>T</code> type.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsBigInt.html"><code>IsBigInt&lt;T&gt;</code></a> - Checks if <code>T</code> is a <code>bigint</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsBoolean.html"><code>IsBoolean&lt;T&gt;</code></a> -  Checks if <code>T</code> is a <code>boolean</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsDeepImmutable.html"><code>IsDeepImmutable&lt;Obj&gt;</code></a> - Checks if all the nested properties of a given object <code>Obj</code> are immutable.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsDeepMutable.html"><code>IsDeepMutable&lt;Obj&gt;</code></a> - Checks if all the nested properties of a given object <code>Obj</code> are  mutable.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsDeepNotRequired.html"><code>IsDeepNotRequired&lt;Obj&gt;</code></a> - Checks if all the properties of a given object (nested) are not required, as in, all properties have the <code>?</code> modifier.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsDeepRequired.html"><code>IsDeepRequired&lt;Obj&gt;</code></a> - Checks if all the properties of a given object (nested) are required, as in, all properties do not have the <code>?</code> modifier.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsExactlyAny.html"><code>IsExactlyAny&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>any</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsExactlyBigInt.html"><code>IsExactlyBigInt&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>bigint</code> not a subtype of it.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsExactlyNumber.html"><code>IsExactlyNumber&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>number</code> not a subtype of it.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsExactlyString.html"><code>IsExactlyString&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>string</code> not a subtype of it.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsExactlySymbol.html"><code>IsExactlySymbol&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>symbol</code> not a subtype of it.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsExactlyUnknown.html"><code>IsExactlyUnknown&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>unknown</code> not a subtype of it.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsFalsy.html"><code>IsFalsy&lt;T&gt;</code></a> - Checks if a given type <code>T</code> is <a href="https://ts-roids.ashgw.me/types/Falsy.html"><code>Falsy</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsFloat.html"><code>IsFloat&lt;N&gt;</code></a> - Checks if a given type <code>T</code> is a <a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsFunction.html"><code>IsFunction&lt;T&gt;</code></a> - Checks if a given type <code>T</code> is a function.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsInteger.html"><code>IsInteger&lt;N&gt;</code></a> - Checks if a given <a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a>  is an <a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsNever.html"><code>IsNever&lt;T&gt;:</code></a> - Checks if a type <code>T</code> does not resolve, so <code>never</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsNewable.html"><code>IsNewable&lt;T&gt;</code></a> -  Checks if a type <code>T</code> is <a href="https://ts-roids.ashgw.me/types/Newable.html"><code>Newable</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsNullable.html"><code>IsNullable&lt;T&gt;</code></a> -  Checks if a type <code>T</code> is <a href="https://ts-roids.ashgw.me/types/Nullable.html"><code>Nullable</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsNumber.html"><code>IsNumber&lt;T&gt;</code></a> - Checks if a type <code>T</code> is a <code>number</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsNumeric.html"><code>IsNumeric&lt;T&gt;</code></a> - Checks if a type <code>T</code> is <a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsObject.html"><code>IsObject&lt;T&gt;</code></a> -  Checks if a given type <code>T</code> qualifies as an object.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsString.html"><code>IsString&lt;T&gt;</code></a> - Check if a given type <code>T</code> is a <code>string</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsSymbol.html"><code>IsSymbol&lt;T&gt;</code></a> - Check if a given type <code>T</code> is a <code>symbol</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/IsTruthy.html"><code>IsTruthy&lt;T&gt;</code></a> - Check if a given type <code>T</code> resolves to a truthy value.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Keys.html"><code>Keys&lt;T&gt;</code></a> - Retrieves the union type of keys (property names) of a type <code>T</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Maybe.html"><code>Maybe&lt;T&gt;</code></a> - Type that might be <a href="https://ts-roids.ashgw.me/types/Nullable.html"><code>Nullable</code></a></p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/MaybeUndefined.html"><code>MaybeUndefined&lt;T&gt;</code></a> - Type that might <code>undefined</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/MutableKeys.html"><code>MutableKeys&lt;Obj&gt;</code></a> - Retrieves the keys that are mutable from an object of type <code>Obj</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Nand.html"><code>Nand&lt;B1, B2&gt;</code></a> - Logical <code>NAND</code> between two boolean types <code>B1</code> and <code>B2</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/NegativeFloat.html"><code>NegativeFloat&lt;N&gt;</code></a> - Represents a negative (]-∞, 0[) <a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/NegativeFloatString.html"><code>NegativeFloatString&lt;S&gt;</code></a> - Represents a negative <a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a> parsed from a <code>string</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/NegativeInteger.html"><code>NegativeInteger&lt;N&gt;</code></a> -  Represents a negative (]-∞, 0[) <a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/NegativeIntegerString.html"><code>NegativeIntegerString&lt;S&gt;</code></a> - Represents a negative <a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a> parsed from a <code>string</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/NewType.html"><code>NewType&lt;New, Base&gt;</code></a> -  Represents a new unique type derived from an existing base type. (branded type)</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Newable.html"><code>Newable</code></a> - Represents constructor functions that can be invoked using the new keyword.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/NonRequiredKeys.html"><code>NonRequiredKeys&lt;Obj&gt;</code></a> - Returns all non required keys of an object <code>Obj</code>, as in any property of an object that is marked with <code>?</code> operator.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Not.html"><code>Not&lt;B&gt;</code></a> - Negates a boolean type <code>B</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Nullable.html"><code>Nullable</code></a> - Represents a type that can either be  <code>null</code> or <code>undefined</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a> - Represents a type that can either be  <code>number</code> or <code>bigint</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/NumerifyString.html"><code>NumerifyString&lt;S&gt;</code></a> - Turn a given string literal to a <a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a>, if possible.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Methods.html"><code>Methods&lt;Obj&gt;</code></a> - Get the literal names of keys that are methods in an object type <code>Obj</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Properties.html"><code>Properties&lt;Obj&gt;</code></a> - Get the literal names of keys that are properties in an object type <code>Obj</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/OmitByType.html"><code>OddNumeric&lt;T&gt;</code></a> - Represents an odd <a href="https://ts-roids.ashgw.me/types/OddNumeric.html"><code>Numeric</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/OmitByType.html"><code>OmitByType&lt;Obj, T&gt;</code></a> - Get a set of properties from <code>Obj</code> whose type are not assignable to <code>T</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/OmitCommonKeys.html"><code>OmitCommonKeys&lt;Obj1, Obj2&gt;</code></a> - Omit any common key between the the two objects,.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/OmitExactlyByType.html"><code>OmitExactlyByType&lt;Obj, T&gt;</code></a> - Omit properties from <code>Obj</code> whose type exactly matches <code>T</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Optional.html"><code>Optional&lt;T&gt;</code></a> - Represents a type that may be <code>null</code>, similar to Python&#39;s <code>Optional</code> type and Rust&#39;s <code>Option</code> enum.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Or.html"><code>Or&lt;B1, B2&gt;</code></a> - Logical <code>OR</code> between two boolean types <code>B1</code> and <code>B2</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/PickByType.html"><code>PickByType&lt;Obj, T&gt;</code></a> - Pick from <code>Obj</code> a set of properties that match the type <code>T</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/PickCommonKeys.html"><code>PickCommonKeys&lt;Obj1, Obj2&gt;</code></a> - Get the common keys between two objects.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/PickExactlyByType.html"><code>PickExactlyByType&lt;Obj, T&gt;</code></a> - Get a set of properties from <code>Obj</code> whose type exactly matches <code>T</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/PositiveFloat.html"><code>PositiveFloat&lt;N&gt;</code></a> - Represents a positive ([0, +∞[) <a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/PositiveFloatString.html"><code>PositiveFloatString&lt;S&gt;</code></a> - Represents a positive <a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a> parsed from a <code>string</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/PositiveInteger.html"><code>PositiveInteger&lt;N&gt;</code></a> - Represents a positive ([0, +∞[) <a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/PositiveIntegerString.html"><code>PositiveIntegerString&lt;S&gt;</code></a> - Represents a negative <a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a> parsed from a <code>string</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Primitive.html"><code>Primitive</code></a> - All <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive">primitive</a> types.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/ReplaceKeys.html"><code>ReplaceKeys&lt;Obj1,P,Obj2&gt;</code></a> - Constructs a new type by replacing properties <code>P</code> of type <code>Obj</code> with object type <code>Obj2</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/RequiredKeys.html"><code>RequiredKeys&lt;Obj&gt;</code></a> - Get the required keys of an object (shallow).</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/SizedTuple.html"><code>SizedTuple&lt;T,N&gt;</code></a> -  Creates a tuple with a specific length, where each element is of a given type.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/StringEndsWith.html"><code>StringEndsWith&lt;S,E&gt;</code></a> - Checks if a string <code>S</code> ends with <code>E</code></p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/StringStartsWith.html"><code>StringStartsWith&lt;S,St&gt;</code></a> -  Checks if a string <code>S</code> starts with <code>St</code></p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/StringifyPrimitive.html"><code>StringifyPrimitive&lt;P&gt;</code></a> - Turns a given <a href="https://ts-roids.ashgw.me/types/Primitive.html"><code>Primitive</code></a> value (except <code>symbol</code>) into its string representation.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Strlen.html"><code>Strlen&lt;S&gt;</code></a> - Get the length of a string <code>S</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/TestType.html"><code>TestType&lt;T1, T2, Expected&gt;</code></a> - Tests if type <code>T1</code> and <code>T2</code> are the same.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/TruthyProperties.html"><code>TruthyProperties&lt;T&gt;</code></a> - Extracts truthy properties from an object type <code>T</code>.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/UnionToIntersection.html"><code>UnionToIntersection&lt;U&gt;</code></a> - As the name implies, it turns a union into an intersection.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Vals.html"><code>Vals&lt;Obj&gt;</code></a> - Get the set of type values in a given object.</p>
-</li>
-<li><p><a href="https://ts-roids.ashgw.me/types/Xor.html"><code>Xor&lt;B1, B2&gt;</code></a> - Exclusive <code>OR</code> between two boolean types <code>B1</code> and <code>B2</code>.</p>
-</li>
+<li><a href="https://ts-roids.ashgw.me/types/PartializedUnion.html"><code>PartializedUnion&lt;T&gt;</code></a> - Creates a union type where each variant has its specific properties required, while other properties are optional.</li>
+<li><a href="https://ts-roids.ashgw.me/types/UniqueArray.html"><code>UniqueArray&lt;T&gt;</code></a> - Create unique array type from a given array type <code>T</code>, a set perse.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Prune.html"><code>Prune&lt;T,N = NotIncluded&gt;</code></a> - Prune a type <code>T</code> by recursively omitting properties of type <code>N</code> (defaults to <a href="https://ts-roids.ashgw.me/types/NotIncluded.html"><code>NotIncluded</code></a>).</li>
+<li><a href="https://ts-roids.ashgw.me/types/UnionToTuple.html"><code>UnionToTuple&lt;T&gt;</code></a> - Converts a union type <code>T</code> into a tuple type, allowing for ordered access to the union&#39;s members.</li>
+<li><a href="https://ts-roids.ashgw.me/types/DeepToPrimitive.html"><code>DeepToPrimitive&lt;Obj&gt;</code></a> - Recursively transforms an object type T into a type where all properties are replaced with their corresponding primitive types.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Assign.html"><code>Assign&lt;Obj,ObjArr&gt;</code></a> - Copies all enumerable own properties from one target object to a source array of objects.</li>
+<li><a href="https://ts-roids.ashgw.me/types/CapitalizeFirst.html"><code>CapitalizeFirst&lt;T&gt;</code></a> - Capitalizes the first character of a string literal type while preserving the rest.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Flip.html"><code>Flip&lt;Obj&gt;</code></a> - Flips keys with values of an object type <code>Obj</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/DeepImmutable.html"><code>DeepImmutable&lt;Obj&gt;</code></a> - Recursively turns the proprties within a given object type <code>T</code> immutable, as in have all the properties with the <code>readonly</code> modifier.</li>
+<li><a href="https://ts-roids.ashgw.me/types/DeepMutable.html"><code>Deepmutable&lt;Obj&gt;</code></a> - Recursively mutates all the proprties within a given object type <code>T</code>, as in have all the properties without the <code>readonly</code> modifier.</li>
+<li><a href="https://ts-roids.ashgw.me/types/DeepRequired.html"><code>DeepRequired&lt;Obj&gt;</code></a> - Recursively make all object properties required.</li>
+<li><a href="https://ts-roids.ashgw.me/types/DeepNotRequired.html"><code>DeepNotRequired&lt;Obj&gt;</code></a> - Recursively make all object properties not required.</li>
+<li><a href="https://ts-roids.ashgw.me/types/DeepOmit.html"><code>DeepOmit&lt;Obj,P&gt;</code></a> - Recursively omits specified nested properties from an object, based on a given predicate <code>P</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/DeepPick.html"><code>DeepPick&lt;Obj,P&gt;</code></a> - Deeply pick properties from a nested object, based on a given predicate <code>P</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/EmptyObject.html"><code>EmptyObject</code></a> - Represents any non-nullish value, basically <code>{}</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/EqualStrlen.html"><code>EqualStrlen&lt;S1, S2&gt;</code></a> - Check if two strings <code>S1</code> and <code>S2</code> have the same length.</li>
+<li><a href="https://ts-roids.ashgw.me/types/PartialExcept.html"><code>PartialExcept&lt;T, P&gt;</code></a> - Makes all properties in <code>T</code> optional except those in <code>K</code> which remain required.</li>
+<li><a href="https://ts-roids.ashgw.me/types/FilterBy.html"><code>FilterBy&lt;Obj, P&gt;</code></a> -  Filters keys from the object type <code>Obj</code> based on a specified predicate <code>P</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a> - Type representing a float.</li>
+<li><a href="https://ts-roids.ashgw.me/types/If.html"><code>If&lt;C, Do, Else&gt;</code></a> - If <code>C</code> evaluates <code>true</code>, <code>Do</code>, otherwise return <code>Else</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IfEquals.html"><code>IfEquals&lt;T, P, Do, Else&gt;</code></a> - Checks if type <code>T</code> is equal to type <code>P</code>. If <code>T</code> is equal to <code>P</code>, the type resolves to <code>Do</code>, otherwise <code>Else</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IfExtends.html"><code>IfExtends&lt;T, P, Do, Else&gt;</code></a> -  Checks if type <code>T</code> extends type <code>P</code>. if it does, the type resolves to <code>Do</code>, otherwise <code>Else</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/ImmutableKeys.html"><code>ImmutableKeys&lt;Obj&gt;</code></a> - Retrieves the keys that are immutable (<code>readonly</code>) from an object of type <code>Obj</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a> - Represents an integer.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Abs.html"><code>Abs&lt;N&gt;</code></a> - Get the absolute value of a <a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/And.html"><code>And&lt;B1,B2&gt;</code></a> - Logical AND between two boolean types.</li>
+<li><a href="https://ts-roids.ashgw.me/types/EitherOneOrMany.html"><code>EitherOneOrMany&lt;T&gt;</code></a> - Represents a type that can be either a single value of type <code>T</code> or an array of values of type <code>T</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Nullable.html"><code>Nullable</code></a> - Represents any non-nullish value, basically <code>{}</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Equals.html"><code>Equals&lt;X,Y&gt;</code></a> - Checks if two types <code>X</code> and <code>Y</code> are exactly equal.</li>
+<li><a href="https://ts-roids.ashgw.me/types/EvenNumeric.html"><code>EvenNumeric&lt;T&gt;</code></a> - Represents an even <a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/ExcludeNull.html"><code>ExcludeNull&lt;T&gt;</code></a> - Excludes <code>null</code> from a type <code>T</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/ExcludeNullable.html"><code>ExcludeNullable&lt;T&gt;</code></a> - Excludes <a href="https://ts-roids.ashgw.me/types/Nullable.html"><code>Nullable</code></a> from a type <code>T</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/ExcludeUndefined.html"><code>ExcludeUndefined&lt;T&gt;</code></a> - Excludes <code>undefined</code> from a type <code>T</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/KeysOfUnion.html"><code>KeysOfUnion&lt;T&gt;</code></a> - Extracts the union of keys from a given union of object types, useful for accessing all possible keys in unions.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Simplify.html"><code>Simplify&lt;T&gt;</code></a> - Flattens the structure of a type by resolving intersections and simplifying nested mapped types, enhancing readability.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Extends.html"><code>Extends&lt;T,U&gt;</code></a> - Evaluates whether one type <code>T</code> is assignable to another type <code>U</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Falsy.html"><code>Falsy</code></a> - Represents a type that is <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">falsy</a>  JavaScript.</li>
+<li><a href="https://ts-roids.ashgw.me/types/FalsyProperties.html"><code>FalsyProperties&lt;T&gt;</code></a> - Extracts falsy properties from an object type <code>T</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsArrayIncludesTypeof.html"><code>IsArrayIncludesTypeof&lt;Arr, T&gt;</code></a> - Checks if an array type <code>Arr</code> includes one or more of <code>T</code> type.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsBigInt.html"><code>IsBigInt&lt;T&gt;</code></a> - Checks if <code>T</code> is a <code>bigint</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsBoolean.html"><code>IsBoolean&lt;T&gt;</code></a> -  Checks if <code>T</code> is a <code>boolean</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsDeepImmutable.html"><code>IsDeepImmutable&lt;Obj&gt;</code></a> - Checks if all the nested properties of a given object <code>Obj</code> are immutable.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsDeepMutable.html"><code>IsDeepMutable&lt;Obj&gt;</code></a> - Checks if all the nested properties of a given object <code>Obj</code> are  mutable.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsDeepNotRequired.html"><code>IsDeepNotRequired&lt;Obj&gt;</code></a> - Checks if all the properties of a given object (nested) are not required, as in, all properties have the <code>?</code> modifier.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsDeepRequired.html"><code>IsDeepRequired&lt;Obj&gt;</code></a> - Checks if all the properties of a given object (nested) are required, as in, all properties do not have the <code>?</code> modifier.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsExactlyAny.html"><code>IsExactlyAny&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>any</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsExactlyBigInt.html"><code>IsExactlyBigInt&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>bigint</code> not a subtype of it.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsExactlyNumber.html"><code>IsExactlyNumber&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>number</code> not a subtype of it.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsExactlyString.html"><code>IsExactlyString&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>string</code> not a subtype of it.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsExactlySymbol.html"><code>IsExactlySymbol&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>symbol</code> not a subtype of it.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsExactlyUnknown.html"><code>IsExactlyUnknown&lt;T&gt;</code></a> - Checks if a type <code>T</code> is exactly <code>unknown</code> not a subtype of it.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsFalsy.html"><code>IsFalsy&lt;T&gt;</code></a> - Checks if a given type <code>T</code> is <a href="https://ts-roids.ashgw.me/types/Falsy.html"><code>Falsy</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsFloat.html"><code>IsFloat&lt;N&gt;</code></a> - Checks if a given type <code>T</code> is a <a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsFunction.html"><code>IsFunction&lt;T&gt;</code></a> - Checks if a given type <code>T</code> is a function.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsInteger.html"><code>IsInteger&lt;N&gt;</code></a> - Checks if a given <a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a>  is an <a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsNever.html"><code>IsNever&lt;T&gt;:</code></a> - Checks if a type <code>T</code> does not resolve, so <code>never</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsNewable.html"><code>IsNewable&lt;T&gt;</code></a> -  Checks if a type <code>T</code> is <a href="https://ts-roids.ashgw.me/types/Newable.html"><code>Newable</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsNullable.html"><code>IsNullable&lt;T&gt;</code></a> -  Checks if a type <code>T</code> is <a href="https://ts-roids.ashgw.me/types/Nullable.html"><code>Nullable</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsNumber.html"><code>IsNumber&lt;T&gt;</code></a> - Checks if a type <code>T</code> is a <code>number</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsNumeric.html"><code>IsNumeric&lt;T&gt;</code></a> - Checks if a type <code>T</code> is <a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsObject.html"><code>IsObject&lt;T&gt;</code></a> -  Checks if a given type <code>T</code> qualifies as an object.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsString.html"><code>IsString&lt;T&gt;</code></a> - Check if a given type <code>T</code> is a <code>string</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsSymbol.html"><code>IsSymbol&lt;T&gt;</code></a> - Check if a given type <code>T</code> is a <code>symbol</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/IsTruthy.html"><code>IsTruthy&lt;T&gt;</code></a> - Check if a given type <code>T</code> resolves to a truthy value.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Keys.html"><code>Keys&lt;T&gt;</code></a> - Retrieves the union type of keys (property names) of a type <code>T</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Maybe.html"><code>Maybe&lt;T&gt;</code></a> - Type that might be <a href="https://ts-roids.ashgw.me/types/Nullable.html"><code>Nullable</code></a></li>
+<li><a href="https://ts-roids.ashgw.me/types/MaybeUndefined.html"><code>MaybeUndefined&lt;T&gt;</code></a> - Type that might <code>undefined</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/MutableKeys.html"><code>MutableKeys&lt;Obj&gt;</code></a> - Retrieves the keys that are mutable from an object of type <code>Obj</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Nand.html"><code>Nand&lt;B1, B2&gt;</code></a> - Logical <code>NAND</code> between two boolean types <code>B1</code> and <code>B2</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/NegativeFloat.html"><code>NegativeFloat&lt;N&gt;</code></a> - Represents a negative (]-∞, 0[) <a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/NegativeFloatString.html"><code>NegativeFloatString&lt;S&gt;</code></a> - Represents a negative <a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a> parsed from a <code>string</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/NegativeInteger.html"><code>NegativeInteger&lt;N&gt;</code></a> -  Represents a negative (]-∞, 0[) <a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/NegativeIntegerString.html"><code>NegativeIntegerString&lt;S&gt;</code></a> - Represents a negative <a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a> parsed from a <code>string</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/NewType.html"><code>NewType&lt;New, Base&gt;</code></a> -  Represents a new unique type derived from an existing base type. (branded type)</li>
+<li><a href="https://ts-roids.ashgw.me/types/Newable.html"><code>Newable</code></a> - Represents constructor functions that can be invoked using the new keyword.</li>
+<li><a href="https://ts-roids.ashgw.me/types/NonRequiredKeys.html"><code>NonRequiredKeys&lt;Obj&gt;</code></a> - Returns all non required keys of an object <code>Obj</code>, as in any property of an object that is marked with <code>?</code> operator.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Not.html"><code>Not&lt;B&gt;</code></a> - Negates a boolean type <code>B</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Nullable.html"><code>Nullable</code></a> - Represents a type that can either be  <code>null</code> or <code>undefined</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a> - Represents a type that can either be  <code>number</code> or <code>bigint</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/NumerifyString.html"><code>NumerifyString&lt;S&gt;</code></a> - Turn a given string literal to a <a href="https://ts-roids.ashgw.me/types/Numeric.html"><code>Numeric</code></a>, if possible.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Methods.html"><code>Methods&lt;Obj&gt;</code></a> - Get the literal names of keys that are methods in an object type <code>Obj</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Properties.html"><code>Properties&lt;Obj&gt;</code></a> - Get the literal names of keys that are properties in an object type <code>Obj</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/OmitByType.html"><code>OddNumeric&lt;T&gt;</code></a> - Represents an odd <a href="https://ts-roids.ashgw.me/types/OddNumeric.html"><code>Numeric</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/OmitByType.html"><code>OmitByType&lt;Obj, T&gt;</code></a> - Get a set of properties from <code>Obj</code> whose type are not assignable to <code>T</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/OmitCommonKeys.html"><code>OmitCommonKeys&lt;Obj1, Obj2&gt;</code></a> - Omit any common key between the the two objects,.</li>
+<li><a href="https://ts-roids.ashgw.me/types/OmitExactlyByType.html"><code>OmitExactlyByType&lt;Obj, T&gt;</code></a> - Omit properties from <code>Obj</code> whose type exactly matches <code>T</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Optional.html"><code>Optional&lt;T&gt;</code></a> - Represents a type that may be <code>null</code>, similar to Python&#39;s <code>Optional</code> type and Rust&#39;s <code>Option</code> enum.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Or.html"><code>Or&lt;B1, B2&gt;</code></a> - Logical <code>OR</code> between two boolean types <code>B1</code> and <code>B2</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/PickByType.html"><code>PickByType&lt;Obj, T&gt;</code></a> - Pick from <code>Obj</code> a set of properties that match the type <code>T</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/PickCommonKeys.html"><code>PickCommonKeys&lt;Obj1, Obj2&gt;</code></a> - Get the common keys between two objects.</li>
+<li><a href="https://ts-roids.ashgw.me/types/PickExactlyByType.html"><code>PickExactlyByType&lt;Obj, T&gt;</code></a> - Get a set of properties from <code>Obj</code> whose type exactly matches <code>T</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/PositiveFloat.html"><code>PositiveFloat&lt;N&gt;</code></a> - Represents a positive ([0, +∞[) <a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/PositiveFloatString.html"><code>PositiveFloatString&lt;S&gt;</code></a> - Represents a positive <a href="https://ts-roids.ashgw.me/types/Float.html"><code>Float&lt;N&gt;</code></a> parsed from a <code>string</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/PositiveInteger.html"><code>PositiveInteger&lt;N&gt;</code></a> - Represents a positive ([0, +∞[) <a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/PositiveIntegerString.html"><code>PositiveIntegerString&lt;S&gt;</code></a> - Represents a negative <a href="https://ts-roids.ashgw.me/types/Integer.html"><code>Integer&lt;N&gt;</code></a> parsed from a <code>string</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Primitive.html"><code>Primitive</code></a> - All <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive">primitive</a> types.</li>
+<li><a href="https://ts-roids.ashgw.me/types/ReplaceKeys.html"><code>ReplaceKeys&lt;Obj1,P,Obj2&gt;</code></a> - Constructs a new type by replacing properties <code>P</code> of type <code>Obj</code> with object type <code>Obj2</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/RequiredKeys.html"><code>RequiredKeys&lt;Obj&gt;</code></a> - Get the required keys of an object (shallow).</li>
+<li><a href="https://ts-roids.ashgw.me/types/SizedTuple.html"><code>SizedTuple&lt;T,N&gt;</code></a> -  Creates a tuple with a specific length, where each element is of a given type.</li>
+<li><a href="https://ts-roids.ashgw.me/types/StringEndsWith.html"><code>StringEndsWith&lt;S,E&gt;</code></a> - Checks if a string <code>S</code> ends with <code>E</code></li>
+<li><a href="https://ts-roids.ashgw.me/types/StringStartsWith.html"><code>StringStartsWith&lt;S,St&gt;</code></a> -  Checks if a string <code>S</code> starts with <code>St</code></li>
+<li><a href="https://ts-roids.ashgw.me/types/StringifyPrimitive.html"><code>StringifyPrimitive&lt;P&gt;</code></a> - Turns a given <a href="https://ts-roids.ashgw.me/types/Primitive.html"><code>Primitive</code></a> value (except <code>symbol</code>) into its string representation.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Strlen.html"><code>Strlen&lt;S&gt;</code></a> - Get the length of a string <code>S</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/TestType.html"><code>TestType&lt;T1, T2, Expected&gt;</code></a> - Tests if type <code>T1</code> and <code>T2</code> are the same.</li>
+<li><a href="https://ts-roids.ashgw.me/types/TruthyProperties.html"><code>TruthyProperties&lt;T&gt;</code></a> - Extracts truthy properties from an object type <code>T</code>.</li>
+<li><a href="https://ts-roids.ashgw.me/types/UnionToIntersection.html"><code>UnionToIntersection&lt;U&gt;</code></a> - As the name implies, it turns a union into an intersection.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Vals.html"><code>Vals&lt;Obj&gt;</code></a> - Get the set of type values in a given object.</li>
+<li><a href="https://ts-roids.ashgw.me/types/Xor.html"><code>Xor&lt;B1, B2&gt;</code></a> - Exclusive <code>OR</code> between two boolean types <code>B1</code> and <code>B2</code>.</li>
 </ul>
 <p>The best way to understand how these types work is to check the <a href="/tests/">tests directory</a>. Each type has corresponding <del>edge</del> test cases that demonstrate its usage and expected behavior.</p>
 <a id="md:decorators" class="tsd-anchor"></a><h4><a href="#md:decorators">Decorators</a></h4><ul>
