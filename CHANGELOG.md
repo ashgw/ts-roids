@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.47.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.46.1...v1.47.0)
+
+### 🚀 Enhancements
+
+- Add `CapitalizeFirst` ([a4f1d0d6](https://github.com/ashgw/ts-roids/commit/a4f1d0d6))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.46.1
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.46.0...v1.46.1)
