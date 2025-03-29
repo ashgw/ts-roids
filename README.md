@@ -41,7 +41,8 @@ Checkout the full [API reference](https://ts-roids.ashgw.me/) for all usage exam
 - [`UnionToTuple<T>`](https://ts-roids.ashgw.me/types/UnionToTuple.html) - Converts a union type `T` into a tuple type, allowing for ordered access to the union's members.
 - [`DeepToPrimitive<Obj>`](https://ts-roids.ashgw.me/types/DeepToPrimitive.html) - Recursively transforms an object type T into a type where all properties are replaced with their corresponding primitive types.
 - [`Assign<Obj,ObjArr>`](https://ts-roids.ashgw.me/types/Assign.html) - Copies all enumerable own properties from one target object to a source array of objects.
-
+- [`CapitalizeFirst<T>`](https://ts-roids.ashgw.me/types/CapitalizeFirst.html) - Capitalizes the first character of a string literal type while preserving the rest.
+- [`Flip<Obj>`](https://ts-roids.ashgw.me/types/Flip.html) - Flips keys with values of an object type `Obj`.
 - [`DeepImmutable<Obj>`](https://ts-roids.ashgw.me/types/DeepImmutable.html) - Recursively turns the proprties within a given object type ``T`` immutable, as in have all the properties with the `readonly` modifier.
 - [`Deepmutable<Obj>`](https://ts-roids.ashgw.me/types/DeepMutable.html) - Recursively mutates all the proprties within a given object type ``T``, as in have all the properties without the `readonly` modifier.
 - [`DeepRequired<Obj>`](https://ts-roids.ashgw.me/types/DeepRequired.html) - Recursively make all object properties required.
@@ -52,7 +53,6 @@ Checkout the full [API reference](https://ts-roids.ashgw.me/) for all usage exam
 - [`EqualStrlen<S1, S2>`](https://ts-roids.ashgw.me/types/EqualStrlen.html) - Check if two strings ``S1`` and ``S2`` have the same length.
 - [`PartialExcept<T, P>`](https://ts-roids.ashgw.me/types/PartialExcept.html) - Makes all properties in `T` optional except those in `K` which remain required.
 - [`FilterBy<Obj, P>`](https://ts-roids.ashgw.me/types/FilterBy.html) -  Filters keys from the object type `Obj` based on a specified predicate ``P``.
-- [`Flip<Obj>`](https://ts-roids.ashgw.me/types/Flip.html) - Flips keys with values of an object type `Obj`.
 - [`Float<N>`](https://ts-roids.ashgw.me/types/Float.html) - Type representing a float.
 - [`If<C, Do, Else>`](https://ts-roids.ashgw.me/types/If.html) - If ``C`` evaluates ``true``, ``Do``, otherwise return ``Else``.
 - [`IfEquals<T, P, Do, Else>`](https://ts-roids.ashgw.me/types/IfEquals.html) - Checks if type ``T`` is equal to type ``P``. If ``T`` is equal to ``P``, the type resolves to ``Do``, otherwise ``Else``.
