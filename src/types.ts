@@ -2175,22 +2175,47 @@ export type CapitalizeFirst<T extends string> =
  *
  * @template N Lower bound (must be positive integer)
  * @template M Upper bound (must be positive integer)
+ *
+ * @example
+ * ```typescript
+ * // Pagination example with a maximum of 100 items per page
+ * interface PaginationParams {
+ *   page: number;
+ *   itemsPerPage: PositiveRange<1, 100>;
+ * }
+ *
+ * async function fetchUsers({ page, itemsPerPage }: PaginationParams) {
+ *   const offset = (page - 1) * itemsPerPage;
+ *   return await db.users.findMany({
+ *     skip: offset,
+ *     take: itemsPerPage,
+ *   });
+ * }
+ *
+ * // Valid usage:
+ * fetchUsers({ page: 1, itemsPerPage: 50 });  // ✅ OK
+ *
+ * // Type errors:
+ * fetchUsers({ page: 1, itemsPerPage: 200 }); // ❌ Error: 200 exceeds maximum of 100
+ * fetchUsers({ page: 1, itemsPerPage: 0 });   // ❌ Error: 0 is not in range
+ * ```
  */
-export type PositiveRange<N extends number, M extends number> =
-  // First check if both bounds are positive integers
-  [IsPositiveInteger<N>, IsPositiveInteger<M>] extends [true, true]
-    ? N extends M
-      ? N // If bounds are equal, only that value is valid
-      : M extends N
-        ? M // Handle case where M equals N
-        : number extends N | M
-          ? number // If either is a generic number, result is number
-          : _BuildRange<N, M, []> // Build the range recursively
-    : never; // Invalid input (not positive integers)
+export type PositiveRange<N extends number, M extends number> = [
+  IsPositiveInteger<N>,
+  IsPositiveInteger<M>,
+] extends [true, true]
+  ? N extends M
+    ? N
+    : M extends N
+      ? M // handles the case where M equals N
+      : number extends N | M
+        ? number
+        : _BuildRange<N, M, []>
+  : never;
 
 /**
  * @hidden
- * Internal helper to build range union recursively
+ * @Internal helper to build range union recursively
  */
 type _BuildRange<
   N extends number,
@@ -2203,7 +2228,7 @@ type _BuildRange<
 
 /**
  * @hidden
- * Internal helper to add 1 to a number literal
+ * @internal
  */
 type AddOne<N extends number> = N extends keyof NumberMap
   ? NumberMap[N]
