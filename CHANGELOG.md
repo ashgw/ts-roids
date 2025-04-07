@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v1.48.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.47.0...v1.48.0)
+
+### 🚀 Enhancements
+
+- Works ([fe077dfc](https://github.com/ashgw/ts-roids/commit/fe077dfc))
+- Works ([c82b39e0](https://github.com/ashgw/ts-roids/commit/c82b39e0))
+- Add `PositiveRange<Min,Max>` ([f948924f](https://github.com/ashgw/ts-roids/commit/f948924f))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.47.0
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.46.1...v1.47.0)
