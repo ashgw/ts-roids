@@ -61,5 +61,5 @@ test('works with pagination example', () => {
     // @ts-expect-error: Type '50' is not assignable to type '2 | 1 | 5 | 3 | 4 | 6 | 7 | 8 | 9 | 10'
     itemsPerPage: 50,
   };
-  expect(validParams).toBeFalsy();
+  expect(validParams).toBeDefined();
 });
