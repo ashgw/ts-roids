@@ -1,3 +1,4 @@
+import type { NumberMap } from './number-map';
 /**
  * Used to display an error message instead of never, for better readability
  * @export type {UnassignableTypeError}
@@ -2207,31 +2208,3 @@ type _BuildRange<
 type AddOne<N extends number> = N extends keyof NumberMap
   ? NumberMap[N]
   : never;
-
-/**
- * @hidden
- * Mapping for number increments
- */
-interface NumberMap {
-  0: 1;
-  1: 2;
-  2: 3;
-  3: 4;
-  4: 5;
-  5: 6;
-  6: 7;
-  7: 8;
-  8: 9;
-  9: 10;
-  10: 11;
-  11: 12;
-  12: 13;
-  13: 14;
-  14: 15;
-  15: 16;
-  16: 17;
-  17: 18;
-  18: 19;
-  19: 20;
-  // Add more as needed
-}
