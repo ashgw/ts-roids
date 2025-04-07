@@ -2167,3 +2167,71 @@ export type UnionToTuple<
  */
 export type CapitalizeFirst<T extends string> =
   T extends `${infer First}${infer Rest}` ? `${Capitalize<First>}${Rest}` : T;
+
+/**
+ * Represents a range of positive integers from N to M (inclusive).
+ * Both bounds must be positive integers.
+ *
+ * @template N Lower bound (must be positive integer)
+ * @template M Upper bound (must be positive integer)
+ */
+export type PositiveRange<N extends number, M extends number> =
+  // First check if both bounds are positive integers
+  [IsPositiveInteger<N>, IsPositiveInteger<M>] extends [true, true]
+    ? N extends M
+      ? N // If bounds are equal, only that value is valid
+      : M extends N
+        ? M // Handle case where M equals N
+        : number extends N | M
+          ? number // If either is a generic number, result is number
+          : _BuildRange<N, M, []> // Build the range recursively
+    : never; // Invalid input (not positive integers)
+
+/**
+ * @hidden
+ * Internal helper to build range union recursively
+ */
+type _BuildRange<
+  N extends number,
+  M extends number,
+  Acc extends number[],
+  Current extends number = N,
+> = Current extends M
+  ? Current | Acc[number]
+  : _BuildRange<N, M, [...Acc, Current], AddOne<Current>>;
+
+/**
+ * @hidden
+ * Internal helper to add 1 to a number literal
+ */
+type AddOne<N extends number> = N extends keyof NumberMap
+  ? NumberMap[N]
+  : never;
+
+/**
+ * @hidden
+ * Mapping for number increments
+ */
+interface NumberMap {
+  0: 1;
+  1: 2;
+  2: 3;
+  3: 4;
+  4: 5;
+  5: 6;
+  6: 7;
+  7: 8;
+  8: 9;
+  9: 10;
+  10: 11;
+  11: 12;
+  12: 13;
+  13: 14;
+  14: 15;
+  15: 16;
+  16: 17;
+  17: 18;
+  18: 19;
+  19: 20;
+  // Add more as needed
+}
