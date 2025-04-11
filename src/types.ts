@@ -818,16 +818,19 @@ export type IsStringEndsWith<T extends string, U extends string> = IfExtends<
 
 /**
  * Enforces a string to start with a specific prefix and end with a specific suffix.
+ * Defaults for both prefix and suffix are empty strings.
  * @example
  * ```ts
- * type Result = EnforcedString<'pk_123', 'pk_', '123'>; // Result: 'pk_123'
+ * type Result = EnforcedString<'pk_123'>; // Result: 'pk_123'
+ * type ResultWithPrefix = EnforcedString<'pk_123', 'pk_'>; // Result: 'pk_123'
+ * type ResultWithSuffix = EnforcedString<'123', '', '123'>; // Result: '123'
  * type InvalidResult = EnforcedString<'123_pk', 'pk_', '123'>; // Error: Type '123_pk' does not satisfy the constraint
  * ```
  */
 export type EnforcedString<
   T extends string,
-  Prefix extends string,
-  Suffix extends string,
+  Prefix extends string = '',
+  Suffix extends string = '',
 > = IsStringStartsWith<T, Prefix> extends true
   ? IsStringEndsWith<T, Suffix> extends true
     ? T
