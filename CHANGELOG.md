@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v1.49.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.48.0...v1.49.0)
+
+### 🚀 Enhancements
+
+- Add `EnforcedString` ([26dc86c9](https://github.com/ashgw/ts-roids/commit/26dc86c9))
+
+### 💅 Refactors
+
+- Rename is tring starts with ([07155321](https://github.com/ashgw/ts-roids/commit/07155321))
+
+### 🏡 Chore
+
+- **release:** V1.48.0 ([20bfeed3](https://github.com/ashgw/ts-roids/commit/20bfeed3))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.48.0
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.47.0...v1.48.0)
