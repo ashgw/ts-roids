@@ -1,18 +1,18 @@
-import { StringStartsWith, TestType } from 'src';
+import { IsStringEndsWith, TestType } from 'src';
 import { test, expect } from 'vitest';
 
 test('_', () => {
-  const result: TestType<StringStartsWith<'barBaz', 'ba'>, true, true> = true;
+  const result: TestType<IsStringEndsWith<'barBaz', 'az'>, true, true> = true;
   expect(result).toBe(true);
 });
 test('_', () => {
-  const result: TestType<StringStartsWith<'barBaz', 'bar'>, true, true> = true;
+  const result: TestType<IsStringEndsWith<'barBaz', 'Baz'>, true, true> = true;
   expect(result).toBe(true);
 });
 
 test('_', () => {
   const result: TestType<
-    StringStartsWith<'barBaz', 'barBaz'>,
+    IsStringEndsWith<'barBaz', 'barBaz'>,
     true,
     true
   > = true;
@@ -21,7 +21,7 @@ test('_', () => {
 
 test('_', () => {
   const result: TestType<
-    StringStartsWith<'barBaz', 'barBazBar'>,
+    IsStringEndsWith<'barBaz', 'FoobarBaz'>,
     false,
     true
   > = true;
@@ -29,11 +29,11 @@ test('_', () => {
 });
 
 test('_', () => {
-  const result: TestType<StringStartsWith<'', ''>, true, true> = true;
+  const result: TestType<IsStringEndsWith<'', ''>, true, true> = true;
   expect(result).toBe(true);
 });
 
 test('_', () => {
-  const result: TestType<StringStartsWith<'0', '0'>, true, true> = true;
+  const result: TestType<IsStringEndsWith<'0', '0'>, true, true> = true;
   expect(result).toBe(true);
 });

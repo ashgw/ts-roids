@@ -795,7 +795,7 @@ export type NumerifyString<S extends string> = S extends `${infer N extends
  * type Result = StringStartsWith<'hello world', 'hello'>; // Result: true
  * ```
  */
-export type StringStartsWith<T extends string, U extends string> = IfExtends<
+export type IsStringStartsWith<T extends string, U extends string> = IfExtends<
   T,
   `${U}${string}`,
   true,
@@ -809,12 +809,30 @@ export type StringStartsWith<T extends string, U extends string> = IfExtends<
  * type Result = StringEndsWith<'hello world', 'world'>; // Result: true
  * ```
  */
-export type StringEndsWith<T extends string, U extends string> = IfExtends<
+export type IsStringEndsWith<T extends string, U extends string> = IfExtends<
   T,
   `${string}${U}`,
   true,
   false
 >;
+
+/**
+ * Enforces a string to start with a specific prefix and end with a specific suffix.
+ * @example
+ * ```ts
+ * type Result = EnforcedString<'pk_123', 'pk_', '123'>; // Result: 'pk_123'
+ * type InvalidResult = EnforcedString<'123_pk', 'pk_', '123'>; // Error: Type '123_pk' does not satisfy the constraint
+ * ```
+ */
+export type EnforcedString<
+  T extends string,
+  Prefix extends string,
+  Suffix extends string,
+> = IsStringStartsWith<T, Prefix> extends true
+  ? IsStringEndsWith<T, Suffix> extends true
+    ? T
+    : never
+  : never;
 
 /**
  * Get the absolute value of a numeric N
