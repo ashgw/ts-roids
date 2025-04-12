@@ -803,6 +803,22 @@ export type StringStartsWith<T extends string, U extends string> = IfExtends<
 >;
 
 /**
+ * Check if a string starts with a given prefix and ends with a given suffix
+ * @example
+ * ```ts
+ * type Result = EnforcedString<'pk_123', 'pk_'>; // Result: 'pk_123'
+ */
+export type EnforcedString<
+  T extends string,
+  Prefix extends string = '',
+  Suffix extends string = '',
+> = StringStartsWith<T, Prefix> extends true
+  ? StringEndsWith<T, Suffix> extends true
+    ? T
+    : never
+  : never;
+
+/**
  * Check if a string ends with another string
  * @example
  * ```ts

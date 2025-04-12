@@ -1,5 +1,9 @@
-# Changelog
+s# Changelog
 
+
+## v1.49.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.48.1...v1.49.0)
 
 ## v1.48.1
 

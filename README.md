@@ -35,11 +35,13 @@ Checkout the full [API reference](https://ts-roids.ashgw.me/) for all usage exam
 
 #### Types
 
-- [`ExclusiveUnion<T>`](https://ts-roids.ashgw.me/types/ExclusiveUnion.html) - Creates a union type where each variant has its specific properties required, while other properties are optional.
+- [`ExclusiveUnion<T>`](https://ts-roids.ashgw.me/types/ExclusiveUnion
+- .html) - Creates a union type where each variant has its specific properties required, while other properties are optional.
 - [`UniqueArray<T>`](https://ts-roids.ashgw.me/types/UniqueArray.html) - Create unique array type from a given array type `T`, a set perse.
 - [`Prune<T,N = NotIncluded>`](https://ts-roids.ashgw.me/types/Prune.html) - Prune a type `T` by recursively omitting properties of type `N` (defaults to [`NotIncluded`](https://ts-roids.ashgw.me/types/NotIncluded.html)).
 - [`PositiveRange<N,M>`](https://ts-roids.ashgw.me/types/PositiveRange.html) - Represents a range of positive integers from N to M (inclusive), useful for enforcing numeric bounds.
 - [`UnionToTuple<T>`](https://ts-roids.ashgw.me/types/UnionToTuple.html) - Converts a union type `T` into a tuple type, allowing for ordered access to the union's members.
+- [`EnforcedString`](https://ts-roids.ashgw.me/types/EnforcedString.html) - Check if a string starts with a given prefix and ends with a given suffix.
 - [`DeepToPrimitive<Obj>`](https://ts-roids.ashgw.me/types/DeepToPrimitive.html) - Recursively transforms an object type T into a type where all properties are replaced with their corresponding primitive types.
 - [`Assign<Obj,ObjArr>`](https://ts-roids.ashgw.me/types/Assign.html) - Copies all enumerable own properties from one target object to a source array of objects.
 - [`CapitalizeFirst<T>`](https://ts-roids.ashgw.me/types/CapitalizeFirst.html) - Capitalizes the first character of a string literal type while preserving the rest.
