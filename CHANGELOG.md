@@ -1,6 +1,18 @@
 s# Changelog
 
 
+## v1.50.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.48.1...v1.50.0)
+
+### 🏡 Chore
+
+- **release:** V1.49.0 ([c880aff27](https://github.com/ashgw/ts-roids/commit/c880aff27))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.49.0
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.48.1...v1.49.0)
