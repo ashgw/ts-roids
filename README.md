@@ -35,7 +35,7 @@ Checkout the full [API reference](https://ts-roids.ashgw.me/) for all usage exam
 
 #### Types
 
-- [`PartializedUnion<T>`](https://ts-roids.ashgw.me/types/PartializedUnion.html) - Creates a union type where each variant has its specific properties required, while other properties are optional.
+- [`ExclusiveUnion<T>`](https://ts-roids.ashgw.me/types/ExclusiveUnion.html) - Creates a union type where each variant has its specific properties required, while other properties are optional.
 - [`UniqueArray<T>`](https://ts-roids.ashgw.me/types/UniqueArray.html) - Create unique array type from a given array type `T`, a set perse.
 - [`Prune<T,N = NotIncluded>`](https://ts-roids.ashgw.me/types/Prune.html) - Prune a type `T` by recursively omitting properties of type `N` (defaults to [`NotIncluded`](https://ts-roids.ashgw.me/types/NotIncluded.html)).
 - [`PositiveRange<N,M>`](https://ts-roids.ashgw.me/types/PositiveRange.html) - Represents a range of positive integers from N to M (inclusive), useful for enforcing numeric bounds.

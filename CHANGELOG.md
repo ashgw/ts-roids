@@ -210,7 +210,7 @@
 ### 🚀 Enhancements
 
 - **#135:** Add `PartialExcept<T,K>` ([#136](https://github.com/ashgw/ts-roids/pull/136))
-- Add `PartializedUnion` ([de02d84](https://github.com/ashgw/ts-roids/commit/de02d84))
+- Add `ExclusiveUnion` ([de02d84](https://github.com/ashgw/ts-roids/commit/de02d84))
 
 ### 🩹 Fixes
 
