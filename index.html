@@ -20,11 +20,10 @@ And if you&#39;re using decorators, set this.</p>
 <p>Requires TypesScript <code>v5.0</code>+</p>
 <a id="md:documentation" class="tsd-anchor"></a><h2><a href="#md:documentation">Documentation</a></h2><p>Checkout the full <a href="https://ts-roids.ashgw.me/">API reference</a> for all usage examples with details.</p>
 <a id="md:types" class="tsd-anchor"></a><h4><a href="#md:types">Types</a></h4><ul>
-<li><a href="https://ts-roids.ashgw.me/types/PartializedUnion.html"><code>PartializedUnion&lt;T&gt;</code></a> - Creates a union type where each variant has its specific properties required, while other properties are optional.</li>
+<li><a href="https://ts-roids.ashgw.me/types/ExclusiveUnion.html"><code>ExclusiveUnion&lt;T&gt;</code></a> - Creates a union type where each variant has its specific properties required, while other properties are optional.</li>
 <li><a href="https://ts-roids.ashgw.me/types/UniqueArray.html"><code>UniqueArray&lt;T&gt;</code></a> - Create unique array type from a given array type <code>T</code>, a set perse.</li>
 <li><a href="https://ts-roids.ashgw.me/types/Prune.html"><code>Prune&lt;T,N = NotIncluded&gt;</code></a> - Prune a type <code>T</code> by recursively omitting properties of type <code>N</code> (defaults to <a href="https://ts-roids.ashgw.me/types/NotIncluded.html"><code>NotIncluded</code></a>).</li>
 <li><a href="https://ts-roids.ashgw.me/types/PositiveRange.html"><code>PositiveRange&lt;N,M&gt;</code></a> - Represents a range of positive integers from N to M (inclusive), useful for enforcing numeric bounds.</li>
-<li><a href="https://ts-roids.ashgw.me/types/EnforcedString.html"><code>EnforcedString&lt;T, Prefix, Suffix&gt;</code></a> - Enforces a string to start with a specific prefix and end with a specific suffix.</li>
 <li><a href="https://ts-roids.ashgw.me/types/UnionToTuple.html"><code>UnionToTuple&lt;T&gt;</code></a> - Converts a union type <code>T</code> into a tuple type, allowing for ordered access to the union&#39;s members.</li>
 <li><a href="https://ts-roids.ashgw.me/types/DeepToPrimitive.html"><code>DeepToPrimitive&lt;Obj&gt;</code></a> - Recursively transforms an object type T into a type where all properties are replaced with their corresponding primitive types.</li>
 <li><a href="https://ts-roids.ashgw.me/types/Assign.html"><code>Assign&lt;Obj,ObjArr&gt;</code></a> - Copies all enumerable own properties from one target object to a source array of objects.</li>
