@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.48.1
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.48.0...v1.48.1)
+
+### 🩹 Fixes
+
+- Mistyped `ExclusiveUnion` ([6a4ca4d55](https://github.com/ashgw/ts-roids/commit/6a4ca4d55))
+
+### 🏡 Chore
+
+- **release:** V1.48.0 ([20bfeed3f](https://github.com/ashgw/ts-roids/commit/20bfeed3f))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.48.0
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.47.0...v1.48.0)

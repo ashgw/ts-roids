@@ -2126,38 +2126,6 @@ export type ExclusiveUnion<
     : never
 >;
 
-type Config = ExclusiveUnion<
-  | { dbConnectionString: string; maxConnections: number }
-  | { apiEndpoint: string; apiKey: string }
-  | { storageBucket: string; accessKeyId: string; secretAccessKey: string }
->;
-
-function configureService(config: Config) {
-  if (config.dbConnectionString) {
-    console.log(
-      `Configuring database with connection string ${config.dbConnectionString}`
-    );
-  } else if (config.apiEndpoint) {
-    console.log(`Configuring API with endpoint ${config.apiEndpoint}`);
-  } else if (
-    config.storageBucket &&
-    config.accessKeyId &&
-    config.secretAccessKey
-  ) {
-    console.log(`Configuring storage bucket ${config.storageBucket}`);
-  } else {
-    console.log('Invalid configuration');
-  }
-}
-
-configureService({ dbConnectionString: 'postgres://...', maxConnections: 100 });
-configureService({ apiEndpoint: 'https://api.example.com', apiKey: '1234' });
-configureService({
-  storageBucket: 'my-bucket',
-  accessKeyId: 'AKIA...',
-  secretAccessKey: 'abcd',
-});
-
 type LastOf<T> = UnionToIntersection<
   T extends any ? () => T : never
 > extends () => infer R
