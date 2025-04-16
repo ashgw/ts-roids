@@ -2149,7 +2149,7 @@ type LastOf<T> = UnionToIntersection<
   : never;
 
 /**
- * `UnionToTuple<T>` converts a union type `T` into a tuple type.
+ * `UnionToTuple<T>` converts a union type `T` into a tuple type while preserving the order.
  * This type is useful for scenarios where you need to work with the individual members of a union as an ordered list.
  *
  * @template T - The union type to convert into a tuple.
