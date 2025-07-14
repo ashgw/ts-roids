@@ -1,3 +1,4 @@
+import { Path } from 'typescript';
 import type { NumberMap } from './number-map';
 /**
  * Used to display an error message instead of never, for better readability
@@ -2249,3 +2250,53 @@ type _BuildRange<
 type AddOne<N extends number> = N extends keyof NumberMap
   ? NumberMap[N]
   : never;
+
+/**
+ * Represents a non-empty array of elements of type `T`.
+ * Ensures that the array has at least one item.
+ *
+ * @example
+ * const valid: NonEmptyArray<number> = [1]; // ✅
+ * const invalid: NonEmptyArray<number> = []; // ❌ Type error
+ */
+export type NonEmptyArray<T> = [T, ...T[]];
+
+/**
+ * Recursively resolves all nested `Promise` types to their underlying value.
+ * Useful when dealing with complex, deeply nested promise chains.
+ *
+ * @example
+ * type A = Promise<Promise<Promise<string>>>;
+ * type B = DeepAwaited<A>; // Result: string
+ */
+export type DeepAwaited<T> = T extends Promise<infer U> ? DeepAwaited<U> : T;
+
+/**
+ * Generates all possible dot-separated key paths from a nested object type.
+ * Returns a union of all valid key paths as string literals.
+ *
+ * @template T The object to extract paths from
+ * @template Prev The accumulated path (used for recursion)
+ *
+ * @example
+ * type Obj = {
+ *   user: {
+ *     profile: {
+ *       name: string;
+ *     };
+ *   };
+ *   age: number;
+ * };
+ *
+ * type P = Paths<Obj>;
+ * // Result:
+ * // 'user'
+ * // 'user.profile'
+ * // 'user.profile.name'
+ * // 'age'
+ */
+export type Paths<T, Prev extends string = ''> = {
+  [K in keyof T & string]:
+    | `${Prev}${K}`
+    | (T[K] extends object ? Paths<T[K], `${Prev}${K}.`> : never);
+}[keyof T & string];
