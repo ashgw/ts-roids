@@ -1,4 +1,3 @@
-import { Path } from 'typescript';
 import type { NumberMap } from './number-map';
 /**
  * Used to display an error message instead of never, for better readability
