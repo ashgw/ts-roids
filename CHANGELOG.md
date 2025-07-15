@@ -1,6 +1,31 @@
 s# Changelog
 
 
+## v1.51.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.50.0...v1.51.0)
+
+### 🩹 Fixes
+
+- Small README bug ([e53fc61be](https://github.com/ashgw/ts-roids/commit/e53fc61be))
+- Types ([3c7056883](https://github.com/ashgw/ts-roids/commit/3c7056883))
+
+### 📖 Documentation
+
+- Add preserve order docs ([4cccec15a](https://github.com/ashgw/ts-roids/commit/4cccec15a))
+
+### ✅ Tests
+
+- Type `paths` ([ff29a4006](https://github.com/ashgw/ts-roids/commit/ff29a4006))
+
+### 🤖 CI
+
+- Update CI runner machines ([b3600053f](https://github.com/ashgw/ts-roids/commit/b3600053f))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.50.0
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.48.1...v1.50.0)
