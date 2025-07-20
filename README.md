@@ -45,8 +45,8 @@ Checkout the full [API reference](https://ts-roids.ashgw.me/) for all usage exam
 - [`Assign<Obj,ObjArr>`](https://ts-roids.ashgw.me/types/Assign.html) - Copies all enumerable own properties from one target object to a source array of objects.
 - [`CapitalizeFirst<T>`](https://ts-roids.ashgw.me/types/CapitalizeFirst.html) - Capitalizes the first character of a string literal type while preserving the rest.
 - [`Paths<Obj`](https://ts-roids.ashgw.me/types/Paths.html) - Generates all possible dot-separated key paths from a nested object type.
-- [`NonEmptyArray<T>`] - The array type must contain at least one element of type `T`.
-- [`DeepAwaited<T>`] - Recursively resolves all nested `Promise` types to their underlying value.
+- [`NonEmptyArray<T>`](https://ts-roids.ashgw.me/types/NonEmptyArray.html) - The array type must contain at least one element of type `T`.
+- [`DeepAwaited<T>`](https://ts-roids.ashgw.me/types/DeepAwaited.html) - Recursively resolves all nested `Promise` types to their underlying value.
 - [`Flip<Obj>`](https://ts-roids.ashgw.me/types/Flip.html) - Flips keys with values of an object type `Obj`.
 - [`DeepImmutable<Obj>`](https://ts-roids.ashgw.me/types/DeepImmutable.html) - Recursively turns the proprties within a given object type ``T`` immutable, as in have all the properties with the `readonly` modifier.
 - [`Deepmutable<Obj>`](https://ts-roids.ashgw.me/types/DeepMutable.html) - Recursively mutates all the proprties within a given object type ``T``, as in have all the properties without the `readonly` modifier.
