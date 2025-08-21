@@ -19,9 +19,8 @@ npm i ts-roids
 ```bash
 pnpm i ts-roids
 ```
-If you're only using types, you can install it as a ``devDependency``.
-
 Requires TypesScript `v5.0`+
+
 ## Documentation
 Checkout the full [API reference](https://ts-roids.ashgw.me/) for all usage examples with details.
 
