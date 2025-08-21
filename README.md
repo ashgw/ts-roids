@@ -13,11 +13,11 @@
 ## Installation
 **npm**
 ```bash
-npm i ts-roids
+npm i -D ts-roids
 ```
 **pnpm**
 ```bash
-pnpm i ts-roids
+pnpm i -D ts-roids
 ```
 Requires TypesScript `v5.0`+
 
