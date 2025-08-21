@@ -1,6 +1,25 @@
 s# Changelog
 
 
+## v2.0.0
+
+[compare changes](https://github.com/ashgw/ts-roids/compare/v1.51.0...v2.0.0)
+
+### 📖 Documentation
+
+- Update readme ([4a0a334](https://github.com/ashgw/ts-roids/commit/4a0a334))
+- Update links ([d4059a3](https://github.com/ashgw/ts-roids/commit/d4059a3))
+- Update readme ([97a9c98](https://github.com/ashgw/ts-roids/commit/97a9c98))
+
+### 🏡 Chore
+
+- Update lock ([ca3e5bd](https://github.com/ashgw/ts-roids/commit/ca3e5bd))
+- Remove decorators ([ff1d76d](https://github.com/ashgw/ts-roids/commit/ff1d76d))
+
+### ❤️ Contributors
+
+- Ashgw <ashrefgw@proton.me>
+
 ## v1.51.0
 
 [compare changes](https://github.com/ashgw/ts-roids/compare/v1.50.0...v1.51.0)
