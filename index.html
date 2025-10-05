@@ -21,7 +21,8 @@
 <li><a href="https://ts-roids.ashgw.me/types/Prune.html"><code>Prune&lt;T,N = NotIncluded&gt;</code></a> - Prune a type <code>T</code> by recursively omitting properties of type <code>N</code> (defaults to <a href="https://ts-roids.ashgw.me/types/NotIncluded.html"><code>NotIncluded</code></a>).</li>
 <li><a href="https://ts-roids.ashgw.me/types/PositiveRange.html"><code>PositiveRange&lt;N,M&gt;</code></a> - Represents a range of positive integers from N to M (inclusive), useful for enforcing numeric bounds.</li>
 <li><a href="https://ts-roids.ashgw.me/types/UnionToTuple.html"><code>UnionToTuple&lt;T&gt;</code></a> - Converts a union type <code>T</code> into a tuple type, allowing for ordered access to the union&#39;s members.</li>
-<li><a href="https://ts-roids.ashgw.me/types/EnforcedString.html"><code>EnforcedString</code></a> - Check if a string starts with a given prefix and ends with a given suffix.</li>
+<li><a href="https://ts-roids.ashgw.me/types/EnforcedString.html"><code>EnforcedString&lt;Prefix, Contains, Suffix&gt;</code></a> - Constructs a type that restricts a string based on three optional constraints:
+a prefix, a substring (must be contained), and a suffix.</li>
 <li><a href="https://ts-roids.ashgw.me/types/DeepToPrimitive.html"><code>DeepToPrimitive&lt;Obj&gt;</code></a> - Recursively transforms an object type T into a type where all properties are replaced with their corresponding primitive types.</li>
 <li><a href="https://ts-roids.ashgw.me/types/Assign.html"><code>Assign&lt;Obj,ObjArr&gt;</code></a> - Copies all enumerable own properties from one target object to a source array of objects.</li>
 <li><a href="https://ts-roids.ashgw.me/types/CapitalizeFirst.html"><code>CapitalizeFirst&lt;T&gt;</code></a> - Capitalizes the first character of a string literal type while preserving the rest.</li>
