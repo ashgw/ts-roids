@@ -1,69 +1,57 @@
-import { EnforcedString, TestType } from 'src';
 import { test, expect } from 'vitest';
+import { EnforcedString, TestType } from 'src';
 
-/**
- * Enforces a string to start with a specific prefix and end with a specific suffix.
- * Defaults for both prefix and suffix are empty strings.
- *
- * @example
- * ```ts
- * type Result = EnforcedString<'pk_123'>; // Result: 'pk_123'
- * type ResultWithPrefix = EnforcedString<'pk_123', 'pk_'>; // Result: 'pk_123'
- * type ResultWithSuffix = EnforcedString<'123', '', '123'>; // Result: '123'
- * type InvalidResult = EnforcedString<'123_pk', 'pk_', '123'>; // Error: Type '123_pk' does not satisfy the constraint
- * ```
- */
-test('valid string with default prefix and suffix', () => {
-  const result: TestType<EnforcedString<'pk_123'>, 'pk_123', true> = true;
-  expect(result).toBe(true);
+test('prefix only', () => {
+  type Got = EnforcedString<'pk_'>;
+  type Expected = `pk_${string}`;
+  const ok: TestType<Got, Expected, true> = true;
+  expect(ok).toBe(true);
 });
 
-test('valid string with specified prefix', () => {
-  const result: TestType<
-    EnforcedString<'pk_123', 'pk_'>,
-    'pk_123',
-    true
-  > = true;
-  expect(result).toBe(true);
+test('contains only', () => {
+  type Got = EnforcedString<string, 'ABC'>;
+  type Expected = `${string}ABC${string}`;
+  const ok: TestType<Got, Expected, true> = true;
+  expect(ok).toBe(true);
 });
 
-test('valid string with specified suffix', () => {
-  const result: TestType<EnforcedString<'123', '', '123'>, '123', true> = true;
-  expect(result).toBe(true);
+test('suffix only', () => {
+  type Got = EnforcedString<string, string, '.json'>;
+  type Expected = `${string}.json`;
+  const ok: TestType<Got, Expected, true> = true;
+  expect(ok).toBe(true);
 });
 
-test('valid string with both prefix and suffix', () => {
-  const result: TestType<
-    EnforcedString<'pk_123', 'pk_', '123'>,
-    'pk_123',
-    true
-  > = true;
-  expect(result).toBe(true);
+test('prefix + suffix', () => {
+  type Got = EnforcedString<'pk_', string, '.json'>;
+  type Expected = `pk_${string}.json`;
+  const ok: TestType<Got, Expected, true> = true;
+  expect(ok).toBe(true);
 });
 
-test('invalid string with incorrect prefix', () => {
-  const result: TestType<
-    EnforcedString<'123_pk', 'pk_', '123'>,
-    never,
-    true
-  > = true;
-  expect(result).toBe(true);
+test('prefix + contains', () => {
+  type Got = EnforcedString<'pk_', 'ABC'>;
+  type Expected = `pk_${string}ABC${string}`;
+  const ok: TestType<Got, Expected, true> = true;
+  expect(ok).toBe(true);
 });
 
-test('invalid string with incorrect suffix', () => {
-  const result: TestType<
-    EnforcedString<'pk_123', 'pk_', '456'>,
-    never,
-    true
-  > = true;
-  expect(result).toBe(true);
+test('contains + suffix', () => {
+  type Got = EnforcedString<string, 'ABC', '.json'>;
+  type Expected = `${string}ABC${string}.json`;
+  const ok: TestType<Got, Expected, true> = true;
+  expect(ok).toBe(true);
 });
 
-test('invalid string with both incorrect prefix and suffix', () => {
-  const result: TestType<
-    EnforcedString<'123_pk', 'pk_', '456'>,
-    never,
-    true
-  > = true;
-  expect(result).toBe(true);
+test('all three', () => {
+  type Got = EnforcedString<'pk_', 'ABC', '.json'>;
+  type Expected = `pk_${string}ABC${string}.json`;
+  const ok: TestType<Got, Expected, true> = true;
+  expect(ok).toBe(true);
+});
+
+test('fully unconstrained collapses to string', () => {
+  type Got = EnforcedString<string, string, string>;
+  const ok: TestType<Got, string, true> = true;
+  expect(ok).toBe(true);
 });
