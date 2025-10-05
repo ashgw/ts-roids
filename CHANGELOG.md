@@ -1,3 +1,19 @@
+# Changelog
+
+## v2.1.0 2025-10-05
+
+### Changes since v2.0.0
+- ad3ae43 chore: bump version to 2.1.0
+- 6d97f76 feat: enhance enforced string
+- eab8537 docs: fix readme typo
+- ab4007a docs: fix readme typo
+
+### Authors
+- ashgw (4 commits)
+
+### Compare
+https://github.com/ashgw/ts-roids/compare/v2.0.0...v2.1.0
+
 s# Changelog
 
 
