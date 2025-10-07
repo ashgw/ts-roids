@@ -11,18 +11,18 @@
     "decorators",
     "type-safety"
   ],
-  "homepage": "https://github.com/ashgw/ts-roids",
+  "homepage": "https://github.com/rccyx/ts-roids",
   "bugs": {
-    "url": "https://github.com/ashgw/ts-roids/issues"
+    "url": "https://github.com/rccyx/ts-roids/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ashgw/ts-roids.git"
+    "url": "git+https://github.com/rccyx/ts-roids.git"
   },
   "license": "GPL-3.0-only",
   "author": {
-    "name": "Ashref Gwader",
-    "email": "ashref@ashgw.me"
+    "name": "rccyx",
+    "email": "oss@rccyx.com"
   },
   "sideEffects": false,
   "types": "./dist/index.d.ts",
@@ -99,3 +99,4 @@
   },
   "packageManager": "pnpm@8.14.0"
 }
+

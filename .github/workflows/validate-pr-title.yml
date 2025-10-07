@@ -10,8 +10,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          repository: 'ashgw/ashgw.me'
 
       - name: Assign PR to opener
         env:
