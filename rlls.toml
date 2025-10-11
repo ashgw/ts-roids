@@ -3,6 +3,7 @@
 default_bump = "patch"
 bump_commit_message = "chore: release {{version}}"
 bump_tag_message    = "release {{version}}"
+post_bump_command = "pnpm i"
 
 [changelog]
 enable = false
