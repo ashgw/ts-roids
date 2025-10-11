@@ -37,13 +37,13 @@ alias f:= format
     rm -rf coverage dist 
 
 @patch:
-    git add .
-    npx changelogen@latest --release --push --patch 
+    rlls patch
 
 @minor:
-    git add .
-    npx changelogen@latest --release --push --minor 
+    rlls minor
 
 @major:
-    git add .
-    npx changelogen@latest --release --push --major 
+    rlls major
+
+@rollback:
+    rlls rollback
