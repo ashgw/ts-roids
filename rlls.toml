@@ -1,0 +1,10 @@
+# @see https://github.com/rccyx/rlls
+
+default_bump = "patch"
+bump_commit_message = "chore: release {{version}}"
+bump_tag_message    = "release {{version}}"
+
+[changelog]
+enable = false
+path   = "CHANGELOG.md"
+
