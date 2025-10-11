@@ -1538,6 +1538,24 @@ export type TestType<T1, T2, Expected extends boolean> = Equals<
 >;
 
 /**
+ * Checks if two types are exactly equal, same as `Equals` but with a more descriptive name.
+ * @example
+ *  type Result1 = Is<string, string>; // is true
+ *  type Result2 = Is<number, string>; // is false
+ *  type Result3 = Is<boolean | string, string | boolean>; // is true
+ */
+export type Is<One, Two> = Equals<One, Two>;
+
+/**
+ * Checks if two types are not exactly equal.
+ * @example
+ *  type Result1 = IsNot<string, string>; // is false
+ *  type Result2 = IsNot<number, string>; // is true
+ *  type Result3 = IsNot<boolean | string, string | boolean>; // is false
+ */
+export type IsNot<One, Two> = Not<Is<One, Two>>;
+
+/**
  * Infers a mapping from values to their corresponding keys within a given object type `T`.
  * The resulting type provides a reverse lookup, which allows to to retrieve the keys based on specific values.
  * @remarks

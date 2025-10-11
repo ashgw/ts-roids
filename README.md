@@ -40,6 +40,8 @@ Checkout the full [API reference](https://ts-roids.rccyx.com/) for all usage exa
 * [`DeepToPrimitive<Obj>`](https://ts-roids.rccyx.com/types/DeepToPrimitive.html) - Recursively transforms an object type T into a type where all properties are replaced with their corresponding primitive types.
 * [`Assign<Obj,ObjArr>`](https://ts-roids.rccyx.com/types/Assign.html) - Copies all enumerable own properties from one target object to a source array of objects.
 * [`CapitalizeFirst<T>`](https://ts-roids.rccyx.com/types/CapitalizeFirst.html) - Capitalizes the first character of a string literal type while preserving the rest.
+* [`Is<T,U>`](https://ts-roids.rccyx.com/types/Is.html) - Checks if two types `T` and `U` are exactly identical and resolves to true or false at the type level.
+* [`IsNot<T,U>`](https://ts-roids.rccyx.com/types/IsNot.html) - Check if `T` and `U` are not the same.
 * [`Paths<Obj`](https://ts-roids.rccyx.com/types/Paths.html) - Generates all possible dot-separated key paths from a nested object type.
 * [`NonEmptyArray<T>`](https://ts-roids.rccyx.com/types/NonEmptyArray.html) - The array type must contain at least one element of type `T`.
 * [`DeepAwaited<T>`](https://ts-roids.rccyx.com/types/DeepAwaited.html) - Recursively resolves all nested `Promise` types to their underlying value.
