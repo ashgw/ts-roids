@@ -1,51 +1,12 @@
 {
-  "name": "ts-roids",
-  "version": "2.1.0",
-  "private": false,
-  "description": "Bullet-proof TS even more",
-  "type": "module",
-  "keywords": [
-    "typescript",
-    "utility",
-    "types",
-    "decorators",
-    "type-safety"
-  ],
-  "homepage": "https://github.com/rccyx/ts-roids",
+  "author": {
+    "email": "oss@rccyx.com",
+    "name": "rccyx"
+  },
   "bugs": {
     "url": "https://github.com/rccyx/ts-roids/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rccyx/ts-roids.git"
-  },
-  "license": "GPL-3.0-only",
-  "author": {
-    "name": "rccyx",
-    "email": "oss@rccyx.com"
-  },
-  "sideEffects": false,
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/",
-    "package.json",
-    "LICENSE",
-    "README.md"
-  ],
-  "scripts": {
-    "build": "pnpm run build:node",
-    "build:node": "rimraf dist && rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "build:docs": "typedoc src/index.ts",
-    "hooks": "husky init",
-    "test": "vitest --coverage --run",
-    "lint": "pnpm format && pnpm lint:ts && pnpm lint:spelling && pnpm lint:knip",
-    "lint:ts": "tsc --noEmit; eslint .",
-    "lint:knip": "knip --production --strict --exclude exports,nsExports,types,nsTypes",
-    "format": "prettier . --write",
-    "format-check": "prettier --check .",
-    "lint:spelling": "cspell \"**\" \".github/**/*\"",
-    "prepare": "husky"
-  },
+  "description": "Bullet-proof TS even more",
   "devDependencies": {
     "@commitlint/cli": "18.6.0",
     "@commitlint/config-conventional": "18.6.0",
@@ -97,6 +58,44 @@
     "vite-tsconfig-paths": "4.2.3",
     "vitest": "1.5.0"
   },
-  "packageManager": "pnpm@8.14.0"
+  "files": [
+    "dist/",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "homepage": "https://github.com/rccyx/ts-roids",
+  "keywords": [
+    "typescript",
+    "utility",
+    "types",
+    "decorators",
+    "type-safety"
+  ],
+  "license": "GPL-3.0-only",
+  "name": "ts-roids",
+  "packageManager": "pnpm@8.14.0",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rccyx/ts-roids.git"
+  },
+  "scripts": {
+    "build": "pnpm run build:node",
+    "build:docs": "typedoc src/index.ts",
+    "build:node": "rimraf dist && rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "format": "prettier . --write",
+    "format-check": "prettier --check .",
+    "hooks": "husky init",
+    "lint": "pnpm format && pnpm lint:ts && pnpm lint:spelling && pnpm lint:knip",
+    "lint:knip": "knip --production --strict --exclude exports,nsExports,types,nsTypes",
+    "lint:spelling": "cspell \"**\" \".github/**/*\"",
+    "lint:ts": "tsc --noEmit; eslint .",
+    "prepare": "husky",
+    "test": "vitest --coverage --run"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "version": "2.2.0"
 }
-
