@@ -898,11 +898,19 @@ export type Strlen<
 > = S extends `${infer L}${infer R}` ? Strlen<R, [...Arr, L]> : Arr['length'];
 
 /**
- *
- *
+ * Check if a string is non-empty
+ * @example
+ * ```ts
+ * export function filledString<S extends string>(s: FilledString<S>) {
+ *   return s;
+ * }
+ * console.log(filledString('hello')); // Ok
+ * console.log(filledString('')); // Error: argument of type 
+ is not assignable to parameter of type 
+ * ```
  */
-export type NonEmptyString<T extends string = string> = Strlen<T> extends 0
-  ? Message<`String must be non-empty`>
+export type FilledString<T extends string = string> = Strlen<T> extends 0
+  ? Message<`must be non-empty string`>
   : T;
 
 /**

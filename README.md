@@ -37,6 +37,7 @@ Checkout the full [API reference](https://ts-roids.rccyx.com/) for all usage exa
 * [`UnionToTuple<T>`](https://ts-roids.rccyx.com/types/UnionToTuple.html) - Converts a union type `T` into a tuple type, allowing for ordered access to the union's members.
 * [`EnforcedString<Prefix, Contains, Suffix>`](https://ts-roids.rccyx.com/types/EnforcedString.html) - Constructs a type that restricts a string based on three optional constraints:
   a prefix, a substring (must be contained), and a suffix.
+* [`FilledString<Obj>`](https://ts-roids.rccyx.com/types/FilledString.html) - Error out on an empty ('') string.
 * [`DeepToPrimitive<Obj>`](https://ts-roids.rccyx.com/types/DeepToPrimitive.html) - Recursively transforms an object type T into a type where all properties are replaced with their corresponding primitive types.
 * [`Assign<Obj,ObjArr>`](https://ts-roids.rccyx.com/types/Assign.html) - Copies all enumerable own properties from one target object to a source array of objects.
 * [`CapitalizeFirst<T>`](https://ts-roids.rccyx.com/types/CapitalizeFirst.html) - Capitalizes the first character of a string literal type while preserving the rest.
