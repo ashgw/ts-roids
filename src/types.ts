@@ -1,11 +1,10 @@
 import type { NumberMap } from './number-map';
+
 /**
  * Used to display an error message instead of never, for better readability
- * @export type {UnassignableTypeError}
+ * @export type {Message}
  */
-
-export type UnassignableTypeError<ErrType extends string> =
-  `type is not assignable to type ${ErrType}`;
+export type Message<T extends string> = T;
 /**
  *
  * Represents a type that can either be  ``null`` or ``undefined``.
@@ -897,6 +896,14 @@ export type Strlen<
   S extends string,
   Arr extends any[] = EmptyArray,
 > = S extends `${infer L}${infer R}` ? Strlen<R, [...Arr, L]> : Arr['length'];
+
+/**
+ *
+ *
+ */
+export type NonEmptyString<T extends string = string> = Strlen<T> extends 0
+  ? Message<`String must be non-empty`>
+  : T;
 
 /**
  * Check if two strings S1 and S2 have the same length
