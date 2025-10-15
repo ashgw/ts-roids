@@ -11,3 +11,5 @@ Nums
 Nand
 Numerify
 rccyx
+Xnor
+XNOR
