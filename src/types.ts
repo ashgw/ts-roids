@@ -722,6 +722,14 @@ export type Xor<B1 extends boolean, B2 extends boolean> = Or<
 */
 export type Nand<B1 extends boolean, B2 extends boolean> = Not<And<B1, B2>>;
 
+/** 
+ * Logical XNOR between two boolean types `A` and `B`.
+ * @example
+   Xnor<true, false>; // false
+   Xnor<true, true>; // true
+*/
+export type Xnor<A extends boolean, B extends boolean> = Not<Xor<A, B>>;
+
 /**
  * Represents the keys of a given  type `T`.
  * This  type alias `Keys<T>` is equivalent to `keyof T`,

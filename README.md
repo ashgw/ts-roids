@@ -151,6 +151,7 @@ ccyx.com/types/OmitByType.html) - Get a set of properties from `Obj` whose type 
 * [`UnionToIntersection<U>`](https://ts-roids.rccyx.com/types/UnionToIntersection.html) - As the name implies, it turns a union into an intersection.
 * [`Vals<Obj>`](https://ts-roids.rccyx.com/types/Vals.html) - Get the set of type values in a given object.
 * [`Xor<B1, B2>`](https://ts-roids.rccyx.com/types/Xor.html) - Exclusive `OR` between two boolean types `B1` and `B2`.
+* [`Xnor<B1, B2>`](https://ts-roids.rccyx.com/types/Xnor.html) - Exclusive `XNOR` between two boolean types `B1` and `B2`.
 
 The best way to understand how these types work is to check the [tests directory](/tests/). Each type has corresponding ~~edge~~ test cases that demonstrate its usage and expected behavior.
 
