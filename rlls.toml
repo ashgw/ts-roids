@@ -1,7 +1,8 @@
 # @see https://github.com/rccyx/rlls
 
 default_bump = "patch"
-bump_commit_message = "chore: release {{version}}"
+bump_commit_message = "bump to {{version}}"
+post_bump_command = ""
 bump_tag_message    = "release {{version}}"
 
 [changelog]
