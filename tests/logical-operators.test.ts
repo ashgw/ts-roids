@@ -1,5 +1,11 @@
-import { Xor, And, Nand, Not, Or, Nor, Xand, TestType } from 'src';
+import { Xor, And, Nand, Not, Or, Nor, Xand, Xnor, TestType } from 'src';
 import { test, expect } from 'vitest';
+
+test('Xnor', () => {
+  type exprectedToBe = true;
+  const result: TestType<Xnor<false, false>, exprectedToBe, true> = true;
+  expect(result).toBe(true);
+});
 
 test('Xand', () => {
   type exprectedToBe = true;
