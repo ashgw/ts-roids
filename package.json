@@ -77,12 +77,9 @@
     "build:node": "rimraf dist && rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "format": "prettier . --write",
     "format-check": "prettier --check .",
-    "hooks": "husky init",
-    "lint": "pnpm format && pnpm lint:ts && pnpm lint:spelling && pnpm lint:knip",
+    "lint": "pnpm format && pnpm lint:ts && pnpm lint:knip",
     "lint:knip": "knip --production --strict --exclude exports,nsExports,types,nsTypes",
-    "lint:spelling": "cspell \"**\" \".github/**/*\"",
     "lint:ts": "tsc --noEmit; eslint .",
-    "prepare": "husky",
     "test": "vitest --coverage --run"
   },
   "sideEffects": false,
