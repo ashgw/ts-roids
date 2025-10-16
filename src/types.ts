@@ -678,7 +678,6 @@ export type If<C extends boolean, Do, Else> = IfExtends<C, true, Do, Else>;
    Not<false>; // true
 */
 export type Not<B extends boolean> = B extends true ? false : true;
-
 /**
  * Logical AND between two boolean types `B1` and `B2`.
  * @example
@@ -690,7 +689,6 @@ export type And<B1 extends boolean, B2 extends boolean> = If<
   If<B2, true, false>,
   false
 >;
-
 /**
  * Logical OR between two boolean types `B1` and `B2`.
  * @example
@@ -702,7 +700,6 @@ export type Or<B1 extends boolean, B2 extends boolean> = If<
   true,
   If<B2, true, false>
 >;
-
 /**
  * Logical NOR between two boolean types `B1` and `B2`.
  * Evaluates to `true` only if both `B1` and `B2` are `false`.
@@ -712,12 +709,7 @@ export type Or<B1 extends boolean, B2 extends boolean> = If<
    Nor<false, true>; // false
    Nor<true, true>; // false
 */
-export type Nor<B1 extends boolean, B2 extends boolean> = If<
-  B1,
-  false,
-  If<B2, false, true>
->;
-
+export type Nor<A extends boolean, B extends boolean> = Not<Or<A, B>>;
 /**
  * Exclusive OR (XOR) between two boolean types `B1` and `B2`.
  * @example
@@ -728,7 +720,6 @@ export type Xor<B1 extends boolean, B2 extends boolean> = Or<
   And<B1, Not<B2>>,
   And<Not<B1>, B2>
 >;
-
 /**
  * Logical NAND between two boolean types `B1` and `B2`.
  * @example
@@ -736,15 +727,13 @@ export type Xor<B1 extends boolean, B2 extends boolean> = Or<
    Nand<true, true>; // false
 */
 export type Nand<B1 extends boolean, B2 extends boolean> = Not<And<B1, B2>>;
-
-/** 
+/**
  * Logical XNOR between two boolean types `A` and `B`.
  * @example
    Xnor<true, false>; // false
    Xnor<true, true>; // true
 */
 export type Xnor<A extends boolean, B extends boolean> = Not<Xor<A, B>>;
-
 /**
  * Logical XAND between two boolean types `A` and `B`. (basically NOR)
  * @example
@@ -753,7 +742,7 @@ export type Xnor<A extends boolean, B extends boolean> = Not<Xor<A, B>>;
    Xand<false, true>; // false
    Xand<true, true>; // false
  */
-export type Xand<A extends boolean, B extends boolean> = Nor<A, B>;
+export type Xand<A extends boolean, B extends boolean> = Not<Xor<A, B>>; // same as XNOR
 
 /**
  * Represents the keys of a given  type `T`.
