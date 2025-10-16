@@ -704,6 +704,21 @@ export type Or<B1 extends boolean, B2 extends boolean> = If<
 >;
 
 /**
+ * Logical NOR between two boolean types `B1` and `B2`.
+ * Evaluates to `true` only if both `B1` and `B2` are `false`.
+ * @example
+   Nor<false, false>; // true
+   Nor<true, false>; // false
+   Nor<false, true>; // false
+   Nor<true, true>; // false
+*/
+export type Nor<B1 extends boolean, B2 extends boolean> = If<
+  B1,
+  false,
+  If<B2, false, true>
+>;
+
+/**
  * Exclusive OR (XOR) between two boolean types `B1` and `B2`.
  * @example
    Xor<true, false>; // true
