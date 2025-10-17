@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { Is, IsNot } from '../src';
+import { Is, IsNot } from 'src';
 
 describe('Is', () => {
   it('should resolve to true for identical types', () => {

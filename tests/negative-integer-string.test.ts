@@ -1,4 +1,4 @@
-import { NegativeIntegerString, TestType } from '@/types';
+import { NegativeIntegerString, TestType } from 'src';
 import { test, expect } from 'vitest';
 
 test('0 is considered +, so should not resolve', () => {

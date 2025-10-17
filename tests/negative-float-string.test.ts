@@ -1,4 +1,4 @@
-import { NegativeFloatString, TestType } from '@/types';
+import { NegativeFloatString, TestType } from 'src';
 import { test, expect } from 'vitest';
 
 test(() => {

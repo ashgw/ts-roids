@@ -1,4 +1,4 @@
-import { DeepPick, TestType } from 'src';
+import { DeepPick, TestType } from '@/index';
 import { test, expect } from 'vitest';
 
 type Obj = {

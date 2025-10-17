@@ -1,4 +1,4 @@
-import { PositiveIntegerString, TestType } from '@/types';
+import { PositiveIntegerString, TestType } from 'src';
 import { test, expect } from 'vitest';
 
 test(() => {
