@@ -196,3 +196,35 @@ type _FindPrimitive<T> = T extends string
             : T extends undefined
               ? undefined
               : never;
+
+/**
+ * Infers a mapping from values to their corresponding keys within a given object type `T`.
+ * The resulting type provides a reverse lookup, which allows to to retrieve the keys based on specific values.
+ * @remarks
+ * > This type only works with simple object types without nested structures or complex types.
+ * It may not behave as expected with objects containing nested properties, union types, intersections, or other
+ * advanced constructs.
+ *
+ * For example, given a simple object type `T`:
+ *
+ * ```typescript
+ * type SimpleObjectType = {
+ *   name: 'Zee';
+ *   age: 29;
+ *   city: 'Zion';
+ * };
+ *
+ * type T =  KeysToValues<SimpleObjectType> // results in:
+ *
+ * {
+ *   Zee : 'name';
+ *   29: 'age';
+ *   'Zion': 'city';
+ * }
+ * ```
+ */
+export type KeysToValues<T extends Record<Keys<T>, Keys<any>>> = {
+  [K in T[Keys<T>]]: {
+    [K1 in Keys<T>]: T[K1] extends K ? K1 : never;
+  }[Keys<T>];
+};
