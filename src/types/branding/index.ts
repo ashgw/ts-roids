@@ -1,2 +1,1 @@
-// Branding types
-export type { NewType, NotIncluded } from './newtype';
+export type { NewType } from './newtype';

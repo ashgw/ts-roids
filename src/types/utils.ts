@@ -112,19 +112,6 @@ export type IsBoolean<T> = IfExtends<T, boolean, true, false>;
 export type IsNumeric<T> = IfExtends<T, Numeric, true, false>;
 
 /**
- * Represents a tuple.
- * @example
- * ````ts
- * Tuple<['a', 'b']>; // Result: ['a', 'b']
- * Tuple<string[]>; // Result: never
- */
-export type Tuple<T> = T extends readonly unknown[]
-  ? number extends T['length']
-    ? never
-    : T
-  : never;
-
-/**
  * Is a given type `T` an array?
  * @returns `true` if `T` it is, otherwise `false`.
  * @example

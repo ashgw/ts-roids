@@ -29,23 +29,3 @@ export type NewType<N, T> = T & {
    * @internal
    */ [__s]: N;
 };
-
-/**
- * `NotIncluded` is a utility type that represents a value that should not be included
- * in the final type. It is primarily used within the `Prune` type to exclude certain
- * properties from the resulting object type.
- *
- * @remarks
- * The `NotIncluded` type is typically used in conditional types to exclude specific
- * branches of the type structure. When a condition matches, `NotIncluded` is applied
- * to those properties that should be omitted from the final type structure.
- *
- * @example
- * ```ts
- * type MyType = IfEquals<'foo', 'bar', string, NotIncluded>; // Result: NotIncluded
- * ```
- *
- * In the context of the `Prune` type, `NotIncluded` helps in filtering out properties
- * from deeply nested structures where certain conditions do not hold.
- */
-export type NotIncluded = NewType<'NotIncluded', string>;

@@ -1,166 +1,19 @@
-// Primitives
-export type {
-  Message,
-  Nullable,
-  Numeric,
-  Primitive,
-  Falsy,
-  Newable,
-  AnyFunction,
-  UnknownFunction,
-  Optional,
-  Maybe,
-  MaybeUnknown,
-  MaybeUndefined,
-  EmptyObject,
-} from './primitives';
+export type * from './primitives';
 
-// Logic
-export type {
-  If,
-  Not,
-  And,
-  Or,
-  Nor,
-  Xor,
-  Nand,
-  Xnor,
-  Xand,
-  IfExtends,
-  IfEquals,
-  Equals,
-} from './logic';
+export type * from './logic';
 
-// Numbers
-export type {
-  Integer,
-  PositiveInteger,
-  PositiveIntegerString,
-  NegativeInteger,
-  NegativeIntegerString,
-  IsNegativeInteger,
-  IsPositiveInteger,
-  Float,
-  PositiveFloat,
-  PositiveFloatString,
-  NegativeFloat,
-  NegativeFloatString,
-  IsNegativeFloat,
-  IsPositiveFloat,
-  Odd,
-  Even,
-  IsNegative,
-  IsPositive,
-  IsInteger,
-  IsFloat,
-  Abs,
-  PositiveRange,
-} from './numbers';
+export type * from './unions';
 
-// Strings
-export type {
-  Strlen,
-  FilledString,
-  EqualStrlen,
-  EnforcedString,
-  StringStartsWith,
-  StringEndsWith,
-  StringifyPrimitive,
-  NumerifyString,
-  CapitalizeFirst,
-} from './strings';
+export type * from './numbers';
 
-// Arrays
-export type {
-  Tuple,
-  SizedTuple,
-  NonEmptyArray,
-  UniqueArray,
-  IsArrayIncludesTypeof,
-} from './arrays';
+export type * from './strings';
 
-// Objects
-export type {
-  Keys,
-  Vals,
-  RequiredKeys,
-  NonRequiredKeys,
-  PickByType,
-  OmitByType,
-  PickExactlyByType,
-  DeepMutable,
-  DeepImmutable,
-  DeepRequired,
-  DeepNotRequired,
-  IsDeepMutable,
-  IsDeepImmutable,
-  IsDeepRequired,
-  IsDeepNotRequired,
-  Paths,
-  DeepPick,
-  DeepOmit,
-  Flip,
-  ReplaceKeys,
-  Assign,
-  PickCommonKeys,
-  OmitCommonKeys,
-  DeepToPrimitive,
-  KeysToValues,
-  MutableKeys,
-  ImmutableKeys,
-  TruthyProperties,
-  FalsyProperties,
-  Methods,
-  Properties,
-  FilterBy,
-  Prune,
-  OmitExactlyByTypeDeep,
-} from './objects';
+export type * from './arrays';
 
-// Unions
-export type {
-  UnionToIntersection,
-  UnionToTuple,
-  ExclusiveUnion,
-  KeysOfUnion,
-} from './unions';
+export type * from './objects';
 
-// Branding
-export type { NewType, NotIncluded } from './branding';
+export type * from './branding';
 
-// Utils
-export type {
-  EitherOneOrMany,
-  IsFalsy,
-  IsTruthy,
-  IsNever,
-  IsNullable,
-  IsUnknown,
-  IsExactlyUnknown,
-  IsString,
-  IsExactlyString,
-  IsBoolean,
-  IsNumeric,
-  IsArray,
-  IsAnyFunction,
-  IsFunction,
-  IsObject,
-  IsNumber,
-  IsExactlyNumber,
-  IsBigInt,
-  IsExactlyBigInt,
-  IsSymbol,
-  IsExactlySymbol,
-  IsExactlyAny,
-  IsNewable,
-  ExcludeNullable,
-  ExcludeUndefined,
-  ExcludeNull,
-  Extends,
-  Simplify,
-  PartialExcept,
-  DeepAwaited,
-} from './utils';
+export type * from './utils';
 
-// Testing
-export type { TestType, Is, IsNot } from './testing';
+export type * from './testing';
