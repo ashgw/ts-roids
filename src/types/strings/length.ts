@@ -1,4 +1,4 @@
-import type { Message, EmptyObject } from '../primitives';
+import type { Message } from '../primitives';
 import type { Equals } from '../logic';
 
 type EmptyArray = [];

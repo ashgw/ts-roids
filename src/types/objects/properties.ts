@@ -1,5 +1,5 @@
 import type { Keys } from './keys';
-import type { AnyFunction, Nullable } from '../primitives';
+import type { AnyFunction } from '../primitives';
 import type { IsTruthy, IsFalsy } from '../utils';
 import type { ExcludeNullable } from '../utils';
 

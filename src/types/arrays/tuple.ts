@@ -1,5 +1,4 @@
 import type { Numeric } from '../primitives';
-import type { IfExtends } from '../logic';
 import type { PositiveInteger } from '../numbers/integer';
 
 /**
