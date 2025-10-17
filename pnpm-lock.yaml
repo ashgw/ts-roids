@@ -110,6 +110,9 @@ devDependencies:
   rollup-plugin-dts:
     specifier: 6.1.0
     version: 6.1.0(rollup@4.9.4)(typescript@5.3.3)
+  testyx:
+    specifier: 1.3.0
+    version: 1.3.0
   ts-node:
     specifier: ^10.9.2
     version: 10.9.2(@types/node@20.10.7)(typescript@5.3.3)
@@ -5843,6 +5846,10 @@ packages:
       '@istanbuljs/schema': 0.1.3
       glob: 7.2.3
       minimatch: 3.1.2
+    dev: true
+
+  /testyx@1.3.0:
+    resolution: {integrity: sha512-SZ5hXVdV7mt1sADBASrWUlSkVvl/UI9+R0ez+SfqAd4aw9Mf+CFPADewOvDA+1m7JMBBrx/VoEOooOnXggJXNg==}
     dev: true
 
   /text-table@0.2.0:
