@@ -5,7 +5,7 @@ import type {
   StrMax,
   StrBetween,
   EqualStrlen,
-} from '../../src'; // adjust path
+} from '../../src';
 
 describe('string length meta-types', () => {
   it('Strlen works', () => {

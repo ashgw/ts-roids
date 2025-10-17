@@ -55,6 +55,10 @@ Checkout the full [API reference](https://ts-roids.rccyx.com/) for all usage exa
 * [`DeepPick<Obj,P>`](https://ts-roids.rccyx.com/types/DeepPick.html) - Deeply pick properties from a nested object, based on a given predicate `P`.
 * [`EmptyObject`](https://ts-roids.rccyx.com/types/EmptyObject.html) - Represents any non-nullish value, basically `{}`.
 * [`EqualStrlen<S1, S2>`](https://ts-roids.rccyx.com/types/EqualStrlen.html) - Check if two strings `S1` and `S2` have the same length.
+* [`Strlen<S>`](https://ts-roids.rccyx.com/types/Strlen.html) - Computes the length of a string `S` at the type level.
+* [`StrMin<S, Min>`](https://ts-roids.rccyx.com/types/StrMin.html) - Enforces that a string `S` has a length greater than or equal to `Min`, returning a [`Message`](https://ts-roids.rccyx.com/types/Message.html) on violation.
+* [`StrMax<S, Max>`](https://ts-roids.rccyx.com/types/StrMax.html) - Enforces that a string `S` has a length less than or equal to `Max`, returning a [`Message`](https://ts-roids.rccyx.com/types/Message.html) on violation.
+* [`StrBetween<S, Min, Max>`](https://ts-roids.rccyx.com/types/StrBetween.html) - Ensures a string `S` has a length within `[Min, Max]`, inclusive, returning a [`Message`](https://ts-roids.rccyx.com/types/Message.html) if outside the range.
 * [`PartialExcept<T, P>`](https://ts-roids.rccyx.com/types/PartialExcept.html) - Makes all properties in `T` optional except those in `K` which remain required.
 * [`FilterBy<Obj, P>`](https://ts-roids.rccyx.com/types/FilterBy.html) -  Filters keys from the object type `Obj` based on a specified predicate `P`.
 * [`Float<N>`](https://ts-roids.rccyx.com/types/Float.html) - Type representing a float.
