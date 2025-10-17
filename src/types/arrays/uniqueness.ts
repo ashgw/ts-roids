@@ -13,7 +13,7 @@
  * ```
  */
 export type UniqueArray<
-  T extends readonly any[],
+  T extends readonly unknown[],
   Seen = never,
 > = T extends readonly [infer Head, ...infer Tail]
   ? Head extends Seen

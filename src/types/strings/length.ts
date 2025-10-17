@@ -27,7 +27,7 @@ type EmptyArray = [];
  */
 export type Strlen<
   S extends string,
-  Arr extends any[] = EmptyArray,
+  Arr extends unknown[] = EmptyArray,
 > = S extends `${infer L}${infer R}` ? Strlen<R, [...Arr, L]> : Arr['length'];
 
 /**

@@ -3,7 +3,7 @@ import { assertType, expect, expectTypeOf, test } from 'vitest';
 
 test.fails('fail test', () => {
   // @ts-expect-error, it cannot be this type, it should error out
-  expect(assertType<Primitive>({ foo: boolean })).rejects.toBe(true);
+  expect(assertType<Primitive>({ foo: true })).rejects.toBe(true);
 });
 
 const valuesToTest = [

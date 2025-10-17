@@ -26,6 +26,8 @@ export type {
   Assign,
   PickCommonKeys,
   OmitCommonKeys,
+  DeepToPrimitive,
+  KeysToValues,
 } from './transform';
 
 // Object mutability types

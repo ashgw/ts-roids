@@ -104,6 +104,8 @@ export type {
   Assign,
   PickCommonKeys,
   OmitCommonKeys,
+  DeepToPrimitive,
+  KeysToValues,
   MutableKeys,
   ImmutableKeys,
   TruthyProperties,

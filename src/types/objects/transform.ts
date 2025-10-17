@@ -131,3 +131,68 @@ export type OmitCommonKeys<
   T extends Record<string, unknown>,
   U extends Record<string, unknown>,
 > = Pick<T, Exclude<Keys<T>, Keys<U>>>;
+
+/**
+ * Recursively transforms an object type T into a type where all properties are replaced with their corresponding primitive types.
+ * @template T The object type to transform.
+ * @returns A new object type with primitive types.
+ *
+ * @example
+ * ```ts
+ * type Actual = {
+ *   a: 'a';
+ *   b: 85;
+ *   c: true;
+ *   d: {
+ *     e: 'xxxxxxxxxxx';
+ *     f: 'eeeeeeeeeeeeeeeeee';
+ *     g: {
+ *       h: 1000000000000000;
+ *       i: undefined;
+ *       j: null;
+ *     };
+ *   };
+ * };
+ *
+ * type Expected = {
+ *   a: string;
+ *   b: number;
+ *   c: boolean;
+ *   d: {
+ *     e: string;
+ *     f: string;
+ *     g: {
+ *       h: number;
+ *       i: undefined;
+ *       j: null;
+ *     };
+ *   };
+ * };
+ *
+ * type Result = DeepToPrimitive<Actual>; // Result: Expected
+ * ```
+ */
+export type DeepToPrimitive<T> = {
+  [K in Keys<T>]: T[K] extends object
+    ? DeepToPrimitive<T[K]>
+    : _FindPrimitive<T[K]>;
+};
+
+/**
+ * @hidden
+ */
+type _FindPrimitive<T> = T extends string
+  ? string
+  : T extends symbol
+    ? symbol
+    : T extends boolean
+      ? boolean
+      : T extends null
+        ? null
+        : T extends number
+          ? number
+          : T extends bigint
+            ? bigint
+            : T extends undefined
+              ? undefined
+              : never;
