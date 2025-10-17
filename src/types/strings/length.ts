@@ -38,12 +38,11 @@ export type Strlen<
  *   return s;
  * }
  * console.log(filledString('hello')); // Ok
- * console.log(filledString('')); // Error: argument of type 
- is not assignable to parameter of type 
+ * console.log(filledString('')); // Error
  * ```
  */
 export type FilledString<T extends string = string> = Strlen<T> extends 0
-  ? Message<`must be non-empty string`>
+  ? Message<'must be non-empty string'>
   : T;
 
 /**
@@ -55,3 +54,58 @@ export type EqualStrlen<S1 extends string, S2 extends string> = Equals<
   Strlen<S1>,
   Strlen<S2>
 >;
+
+/**
+ * internal numeric tuple builder
+ * converts a number literal to a tuple of that length for type-level math.
+ * this is not the same as your Tuple<T> or SizedTuple<T, N> types;
+ * it exists solely for numeric reasoning (e.g. comparisons like A <= B)
+ */
+type BuildTupleFromNumber<
+  N extends number,
+  T extends unknown[] = [],
+> = T['length'] extends N ? T : BuildTupleFromNumber<N, [...T, unknown]>;
+
+/**
+ * type-level numeric comparator
+ * evaluates to true if A <= B, else false
+ */
+type Lte<A extends number, B extends number> = BuildTupleFromNumber<B> extends [
+  ...BuildTupleFromNumber<A>,
+  ...unknown[],
+]
+  ? true
+  : false;
+
+/**
+ * Constrain string to have length <= Max
+ */
+export type StrMax<T extends string, Max extends number> = Lte<
+  Strlen<T>,
+  Max
+> extends true
+  ? T
+  : Message<`must be at most ${Max} characters long`>;
+
+/**
+ * Constrain string to have length >= Min
+ */
+export type StrMin<T extends string, Min extends number> = Lte<
+  Min,
+  Strlen<T>
+> extends true
+  ? T
+  : Message<`must be at least ${Min} characters long`>;
+
+/**
+ * Constrain string to have Min <= length <= Max
+ */
+export type StrBetween<
+  T extends string,
+  Min extends number,
+  Max extends number,
+> = Lte<Min, Strlen<T>> extends true
+  ? Lte<Strlen<T>, Max> extends true
+    ? T
+    : Message<`must be at most ${Max} characters long`>
+  : Message<`must be at least ${Min} characters long`>;

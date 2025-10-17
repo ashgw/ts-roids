@@ -1,5 +1,12 @@
 // String length types
-export type { Strlen, FilledString, EqualStrlen } from './length';
+export type {
+  Strlen,
+  FilledString,
+  EqualStrlen,
+  StrBetween,
+  StrMin,
+  StrMax,
+} from './length';
 
 // String enforcement types
 export type { EnforcedString } from './enforcement';
