@@ -6,3 +6,6 @@ export type { UniqueArray } from './uniqueness';
 
 // Array includes types
 export type { IsArrayIncludesTypeof } from './includes';
+
+// Array last types
+export type { LastElement } from './last';

@@ -78,7 +78,7 @@
     "build:node": "rimraf dist && rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "format": "prettier . --write",
     "format-check": "prettier --check .",
-    "lint": "pnpm format && pnpm lint:ts && pnpm lint:knip",
+    "lint": "pnpm lint:ts && pnpm lint:knip",
     "lint:knip": "knip --production --strict --exclude exports,nsExports,types,nsTypes",
     "lint:ts": "tsc --noEmit; eslint .",
     "test": "vitest --coverage --run"

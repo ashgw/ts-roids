@@ -82,6 +82,7 @@ Checkout the full [API reference](https://ts-roids.rccyx.com/) for all usage exa
 * [`Falsy`](https://ts-roids.rccyx.com/types/Falsy.html) - Represents a type that is [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)  JavaScript.
 * [`FalsyProperties<T>`](https://ts-roids.rccyx.com/types/FalsyProperties.html) - Extracts falsy properties from an object type `T`.
 * [`IsArrayIncludesTypeof<Arr, T>`](https://ts-roids.rccyx.com/types/IsArrayIncludesTypeof.html) - Checks if an array type `Arr` includes one or more of `T` type.
+* [`LastElement<Arr, T>`](https://ts-roids.rccyx.com/types/LastElement.html) - Get the last element of the array.
 * [`IsBigInt<T>`](https://ts-roids.rccyx.com/types/IsBigInt.html) - Checks if `T` is a `bigint`.
 * [`IsBoolean<T>`](https://ts-roids.rccyx.com/types/IsBoolean.html) -  Checks if `T` is a `boolean`.
 * [`IsDeepImmutable<Obj>`](https://ts-roids.rccyx.com/types/IsDeepImmutable.html) - Checks if all the nested properties of a given object `Obj` are immutable.
