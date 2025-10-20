@@ -2,7 +2,7 @@
 
 # ts-roids
 
-100+  types to bullet proof TypeScript even more.
+Bullet proof TypeScript even more.
 
 [![CI](https://github.com/rccyx/ts-roids/actions/workflows/ci.yml/badge.svg)](https://github.com/rccyx/ts-roids/actions/workflows/ci.yml)
 [![@latest](https://img.shields.io/npm/v/ts-roids.svg)](https://www.npmjs.com/package/ts-roids)
@@ -127,11 +127,7 @@ Checkout the full [API reference](https://ts-roids.rccyx.com/) for all usage exa
 * [`Methods<Obj>`](https://ts-roids.rccyx.com/types/Methods.html) - Get the literal names of keys that are methods in an object type `Obj`.
 * [`Properties<Obj>`](https://ts-roids.rccyx.com/types/Properties.html) - Get the literal names of keys that are properties in an object type `Obj`.
 * [`OddNumeric<T>`](https://ts-roids.rccyx.com/types/OmitByType.html) - Represents an odd [`Numeric`](https://ts-roids.rccyx.com/types/OddNumeric.html).
-* [`OmitByType<Obj, T>`]([https://ts-roids.r](https://ts-roids.r)
-
-
-ccyx.com/types/OmitByType.html) - Get a set of properties from `Obj` whose type are not assignable to `T`.
-
+* [`OmitByType<Obj, T>`](https://ts-roids.rccyx.com/types/OmitByType.html) - Get a set of properties from `Obj` whose type are not assignable to `T`.
 * [`OmitCommonKeys<Obj1, Obj2>`](https://ts-roids.rccyx.com/types/OmitCommonKeys.html) - Omit any common key between the the two objects,.
 * [`OmitExactlyByType<Obj, T>`](https://ts-roids.rccyx.com/types/OmitExactlyByType.html) - Omit properties from `Obj` whose type exactly matches `T`.
 * [`Optional<T>`](https://ts-roids.rccyx.com/types/Optional.html) - Represents a type that may be `null`, similar to Python's `Optional` type and Rust's `Option` enum.
