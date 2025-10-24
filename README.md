@@ -131,6 +131,7 @@ Checkout the full [API reference](https://ts-roids.rccyx.com/) for all usage exa
 * [`OmitCommonKeys<Obj1, Obj2>`](https://ts-roids.rccyx.com/types/OmitCommonKeys.html) - Omit any common key between the the two objects,.
 * [`OmitExactlyByType<Obj, T>`](https://ts-roids.rccyx.com/types/OmitExactlyByType.html) - Omit properties from `Obj` whose type exactly matches `T`.
 * [`Optional<T>`](https://ts-roids.rccyx.com/types/Optional.html) - Represents a type that may be `null`, similar to Python's `Optional` type and Rust's `Option` enum.
+* [`NotAssignableTo<U, V>`](https://ts-roids.rccyx.com/types/NotAssignableTo.html) - Represents a type that excludes all members of `U` that are assignable to `V`.
 * [`Or<B1, B2>`](https://ts-roids.rccyx.com/types/Or.html) - Logical `OR` between two boolean types `B1` and `B2`.
 * [`PickByType<Obj, T>`](https://ts-roids.rccyx.com/types/PickByType.html) - Pick from `Obj` a set of properties that match the type `T`.
 * [`PickCommonKeys<Obj1, Obj2>`](https://ts-roids.rccyx.com/types/PickCommonKeys.html) - Get the common keys between two objects.

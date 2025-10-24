@@ -71,3 +71,9 @@ export type MaybeUndefined<T> = T | undefined;
  * Presents any non-nullish value
  */
 export type EmptyObject = NonNullable<unknown>;
+
+/**
+ * Represents a type that is not assignable to `V`.
+ * @example
+ */
+export type NotAssignableTo<U, V> = U extends V ? never : U;
