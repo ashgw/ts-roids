@@ -1,4 +1,4 @@
-# @see https://github.com/rccyx/rlls
+# @see https://github.com/rccyx/rlyx
 
 default_bump = "patch"
 bump_commit_message = "bump to {{version}}"
